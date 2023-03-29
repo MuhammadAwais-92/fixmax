@@ -1,0 +1,560 @@
+
+.quant-input {
+  font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.4rem;
+    width: 100%;
+    height: 5rem;
+    background: $white;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    outline: none;
+    color: $text-6;
+    padding: 1.3rem 1.8rem;    
+    &::placeholder {
+      color: $text-c;
+    }
+}
+
+.common-input {
+  margin-bottom: 2.3rem;
+  .input-label {
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    color: $secondary;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+  }
+  .ctm-textarea {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.4rem;
+    width: 100%;
+    background: $white;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    outline: none;
+    color: $text-6;
+    padding: 1.3rem 1.8rem;
+    min-height: 10rem;
+    &::placeholder {
+      color: $text-c;
+      font-weight: 300;
+      font-size: 1.4rem;
+    }
+  }
+  select {
+    display: none;
+  }
+  input {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.4rem;
+    width: 100%;
+    height: 5rem;
+    background: $white;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    outline: none;
+    color: $text-6;
+    padding: 1.3rem 1.8rem;
+    // padding-right: 3.6rem;
+    &::placeholder {
+      color: $text-c;
+    }
+    &.password-input {
+      &::placeholder {
+        color: $text-c;
+        font-size: 1rem;
+      }
+    }
+  }
+  .select2-container--default .select2-selection--single {
+    border-radius: 0 !important;
+  }
+}
+.password-input-box {
+  position: relative;
+  i, svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.8rem;
+    color: $text-c;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  &.date-box {
+    svg {
+      pointer-events: none;
+    }
+    input {
+      cursor: pointer;
+    }
+  }
+}
+.rtl {
+  .password-input-box {
+    i {
+      right: auto;
+      left: 1.8rem;
+    }
+  }
+}
+.phone-number-input {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+  .code-c {
+    max-width: 8.5rem;
+    width: 100%;
+
+    .select2.select2-container {
+      height: 5rem !important;
+      outline: 0 !important;
+    }
+    .select2-container--default .select2-selection--single {
+      border: none;
+      background: url(../img/border-1.png) no-repeat center right;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+  }
+  input {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.4rem;
+    width: 100%;
+    height: 5rem;
+    background: $white;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    color: $text-6;
+    padding: 1.3rem 1.8rem;
+    padding-right: 3.6rem;
+  }
+}
+
+.rtl {
+  .phone-number-input {
+    .code-c {
+      .select2-container--default .select2-selection--single {
+        background: url(../img/border-1.png) no-repeat center left;
+      }
+    }
+  }
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    text-align: right;
+  }
+}
+
+.input-address-mt {
+  position: relative;
+  input {
+    padding-right: 5.5rem;
+  }
+  .address-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 5rem;
+    width: 5rem;
+    background: $primary;
+    color: $secondary;
+    font-size: 2rem;
+    transition: .4s ease-in-out;
+    &:hover {
+      color: $primary;
+      background: $secondary;
+    }
+  }
+}
+.rtl {
+  .input-address-mt {
+    input {
+      padding-left: 5.5rem;
+      padding-right: 0;
+    }
+    .address-icon {
+      right: auto;
+      left: 0;
+    }
+  }
+}
+// custom check box
+.custom-check {
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 2.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $text-6;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: none;
+    border: 1px solid $border-color;
+  }
+
+  /* On mouse-over, add a grey background color */
+  // &:hover input~.checkmark {
+  //     background-color: #ccc;
+  // }
+
+  /* When the checkbox is checked, add a blue background */
+  input:checked ~ .checkmark {
+    background-color: $secondary;
+    border: 1px solid $secondary;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 0.7rem;
+    top: 0.3rem;
+    width: 0.7rem;
+    height: 1.2rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+// .rtl
+.rtl {
+  .custom-check {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    /* Create a custom checkbox */
+    .checkmark {
+      left: auto;
+      right: 0;
+    }
+    /* Style the checkmark/indicator */
+    .checkmark:after {
+      left: auto;
+      right: 0.7rem;
+    }
+  }
+}
+
+// Custom radios
+// custom Radio
+.addres-list {
+  .custom-radio {
+    .checkmark {
+      top: 0.5rem;
+    }
+  }
+}
+.custom-radio {
+  &.payment-type-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $secondary;
+    margin-bottom: 2.4rem;
+  }
+  &.payment-card-type {
+    font-size: 0.7rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $secondary;
+  }
+
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  // margin-bottom: 0.5rem;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $text-6;
+  line-height: 1.9rem;
+
+  /* Hide the browser's default radio button */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: $white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+
+  /* On mouse-over, add a grey background color */
+  //   &:hover input ~ .checkmark {
+  //     background-color: #ccc;
+  //   }
+
+  /* When the radio button is checked, add a blue background */
+  input:checked ~ .checkmark {
+    border: 1px solid transparent;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 21.416 21.024'%3E%3Cg id='check_circle_icon_128923' transform='translate(-0.998 -0.982)'%3E%3Cpath id='Path_48307' data-name='Path 48307' d='M21,10.625V11.5a9.5,9.5,0,1,1-5.633-8.682' transform='translate(0 0)' fill='none' stroke='%23022c44' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath id='Path_48308' data-name='Path 48308' d='M20.069,4l-8.514,8.523L9,9.969' transform='translate(0.931 -0.298)' fill='none' stroke='%23022c44' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .checkmark:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+// select 2 style
+
+.select2.select2-container {
+  width: 100% !important;
+  height: 5rem;
+}
+.select2-container--default .select2-selection--single {
+  background-color: #fff !important;
+  height: 5rem !important;
+  max-height: 100% !important;
+  display: block !important;
+  padding: 1.3rem 1.8rem !important;
+  border: 0 !important;
+  box-shadow: 0 0 6px rgba($black, 0.16);
+  .select2-selection__rendered {
+    font-size: 1.4rem !important;  
+    padding: 0 !important;
+    color: $gray-600 !important;
+    font-weight: 300;
+    font-size: 1.4rem;
+    border-radius: 0 !important;
+  }
+}
+
+.select2-selection__arrow {
+  height: 100% !important;
+  background-image: url(../img/dd-icon.svg);
+  background-repeat: no-repeat;
+  // background-size: cover;
+  width: 14px !important;
+  height: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  right: 1.5rem !important;
+  background-position: center;
+  b {
+    display: none;
+  }
+}
+
+.rtl {
+  .select2-selection__arrow {
+    right: auto !important;
+    left: 1.5rem !important;
+  }
+}
+
+.select2-dropdown {
+  border-color: transparent !important;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  outline: 0 !important;
+  border-color: lightgray !important;
+  font-size: 1.596rem !important;
+  color: $text-6 !important;
+  padding: 0 1.2rem !important;
+}
+
+.select2-container--default
+  .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $primary !important;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: $primary !important; 
+  color: $white !important;
+}
+.select2-results__option--selectable {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+  color: $text-c;
+  padding: 1rem 1.5rem !important;
+}
+
+// switch button
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.4rem;
+  height: 1.4rem;
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 47, 52, 0.36);
+    transition: background-color 0.2s ease-out;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 2rem;
+      width: 2rem;
+      left: 0px;
+      top: -3px;
+      border: 1px solid $primary;
+      background-color: white;
+      transition: 0.4s;
+    }
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  input:checked + .slider {
+    background-color: $primary;
+  }
+  input:checked + .slider:before {
+    transform: translateX(1.7rem);
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+// rtl
+
+.rtl {
+  .common-input input {
+    padding-right: 1.8rem;
+    padding-left: 3.6rem;
+  }
+  
+}
+
+.common-input-border {
+
+ input{
+  width: 100%;
+  height: 3rem;
+  background: transparent;
+  border: 1px solid #eee;
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  color: $secondary;
+  border-radius: 0;
+  padding: 1rem;
+  &:focus,&:focus-visible{
+    border-radius: 0;
+    outline: none;
+    border-color: $secondary;
+  }
+ &::placeholder{
+  border-radius: 0;
+  color: $text-c;
+ }
+ }
+ span {
+   font-size: 1.2rem;
+   color: $black;
+ }
+}
+
+.rtl {
+  .custom-radio {
+    padding-left: 0;
+    padding-right: 3.5rem;
+    .checkmark {
+      left: auto;
+      right: 0;
+    }
+  }
+  .map-mark-btn {
+    left: auto;
+    right: 5rem;
+  }
+}
+
+.iti--allow-dropdown {
+  width: 100%;   
+} 
+
+.pac-container {
+  z-index: 9999;
+}
+
+.map-mark-btn {
+  position: absolute;
+  left: 0;
+  bottom: 11rem;
+}

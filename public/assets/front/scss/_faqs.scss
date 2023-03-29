@@ -1,0 +1,64 @@
+.faqs-accordian {    
+    .card {
+        border: 0;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 2.2rem;
+        padding-top: 2.5rem;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+    .card-header {
+        background-color: $white;
+        border-bottom: 0;
+        padding: 0;
+                
+        button {
+            i {
+                font-size: 1.9rem;
+            }
+            .fas.fa-minus {
+                display: none;
+            }
+            .fas.fa-plus {
+                display: inline-block;
+            }
+        }        
+        button[aria-expanded="true"]{
+            .fas.fa-minus {
+                display: inline-block;
+            }
+            .fas.fa-plus {
+                display: none;
+            }            
+
+        }
+        .text-p {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: $secondary;
+            line-height: 3.1rem;
+            text-align: left;
+            margin-bottom: 0;            
+            text-transform: none;
+            max-width: 90%;
+        }
+    }
+    .card-body {
+        padding: 0;
+        .primary-text-p {
+            line-height: 2.8rem;
+            margin-top: 1.4rem;
+        }
+    }
+}
+
+// right direction css
+
+.rtl {
+    .faqs-accordian .card-header {        
+        .text-p {
+            text-align: right;
+        }
+    } 
+}

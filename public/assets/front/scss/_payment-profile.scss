@@ -1,0 +1,105 @@
+.payment-profile-page {
+    .nav-pills {        
+        box-shadow: 0 0 6px rgba($black,.16);
+        border-radius: 0;
+        li {
+            width: 33.333%;    
+            border-right: .05rem solid $gray-600;
+            @include m-450 {
+                width: 100%;
+                border-right: 0;
+                border-bottom: .05rem solid $gray-600;
+            }
+            &:last-child {
+                border-right: 0;
+                @include m-450 { 
+                    border-bottom: 0;
+                }
+            }      
+
+        }
+        .nav-link {
+            height: 5rem;
+            @include flex-box;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2rem;
+            border-radius: 0;
+            transition: .4s all;
+            color: $secondary;
+            &:hover, &.active {
+                background-color: $secondary;
+                color: $white;
+            }            
+        }
+    }
+}
+
+.payment-info-card {
+    border: 1px solid $text-e;
+    box-shadow: 0 0 6px rgba($black,.16);
+    .header-box  {
+        height: 5rem;
+        background-color: #F9F9F9;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: $secondary;
+        font-weight: 400;
+        @include m-375 {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
+        .title {
+            width: 33.333%;
+        }
+    }
+    .value-box {
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        height: 5rem;        
+        color: $black; 
+        @include m-375 {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
+        .title {
+            width: 33.333%;
+        }
+    }
+}
+
+.payment-profile-block {
+    .pay-pal-logo-block {
+        margin: 1rem 0 1.4rem 0;
+    }
+    .my-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $secondary;
+        line-height: 2.9rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+// right direction css
+
+.rtl {
+    .payment-profile-page .nav-pills li {
+        border-right: 0;
+        border-left: 0.05rem solid #666666;
+        &:last-child {
+            border-left: 0;
+        }
+        @include m-450 {
+            border-left: 0;            
+        }
+    }
+}
+
+.no-payment {
+    font-size: 1.6rem;
+    line-height: 1.9rem;    
+    color: $gray-600;
+    padding: 1.5rem;
+}

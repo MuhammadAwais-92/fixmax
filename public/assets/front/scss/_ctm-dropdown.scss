@@ -1,0 +1,171 @@
+.ctm-dropdown{
+    .dropdown-toggle {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $white;
+        display: flex;
+        align-items: center;
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 15rem;
+            margin-right: .5rem;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .dropdown-menu {
+        background-color: $text-e;
+        padding: 0;
+        border: 0;
+        border-radius: 0;        
+        margin-top: .7rem;
+        right: 0;
+        left: auto;
+        &::before{
+            content: "";
+            width: 1.3rem;
+            height: 1.3rem;
+            position: absolute;
+            right: 2rem;
+            top: -1.3rem;            
+            border-right: .65rem solid transparent;
+            border-left: .65rem solid transparent;
+            border-bottom: .65rem solid $white;
+        }
+        .dropdown-item {
+            padding: 1rem 2rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.1rem;
+            transition: .4s all;
+            color: $secondary;
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+    &.lang-dd {
+        margin-left: 9rem;
+        @include large-1440 {
+            margin-left: 4rem;
+        }
+        @include large-1191 {
+            position: absolute;
+            right: 33%;
+        }
+        @include medium-991 {
+            right: 39%;
+        }
+        @include m-575 {
+            right: 46%;            
+        }
+        @include m-450 {
+            right: 2.5rem;
+            top: 50%;
+        }
+        .dropdown-menu {
+            left: auto;
+            right: -2rem;
+        }
+    }
+    &.share-dd {
+        .dropdown-toggle > svg {
+            width: 2.6rem;
+            transition: .4s ease-in-out;  
+            &:hover {
+                path {
+                    fill: $primary;
+                }                
+            }
+            path {
+                fill: $secondary;
+                transition: .4s ease-in-out;                
+            }
+        }
+        .dropdown-menu {
+            width: 4.5rem;
+            min-width: unset;     
+            transform: translate3d(-50%, 29px, 0px) !important;
+            left: 50% !important;
+            &::before {
+                border-bottom-color: $text-e;
+            }       
+            .dropdown-item > svg {                
+                width: 1.4rem;
+                path {
+                    fill: $secondary;
+                }
+            }
+            .dropdown-item {
+                padding: .5rem 1.5rem;
+                @include flex-box;
+                &:first-child {
+                    padding-top: 1rem;
+                }
+                &:last-child {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// rtl 
+
+.rtl {
+    
+.ctm-dropdown{     
+    &.lang-dd {
+        margin-right: 9rem;
+        margin-left: 0;
+        @include large-1440 {
+            margin-right: 4rem;
+            margin-left: 0;
+        }
+        @include large-1191 {            
+            left: 33%;
+            right: auto;
+        }
+        @include medium-991 {
+            left: 39%;
+            right: auto;
+        }
+        @include m-575 {
+            left: 46%;            
+            right: auto;
+        }
+        @include m-450 {
+            left: 2.5rem;
+            right: auto;
+            top: 50%;
+        }
+        .dropdown-menu {
+            right: auto;
+            left: -2rem;
+        }
+
+    }
+    .dropdown-toggle {
+        span {
+            margin-right: 0;
+            margin-left: .5rem;
+        }
+    }
+
+    .dropdown-menu {
+        right: auto;
+        left: 0;
+        text-align: right;
+        &::before{
+            right: auto;
+            left: 2rem;
+        }
+    }
+}
+}
+
+

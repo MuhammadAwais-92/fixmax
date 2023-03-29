@@ -1,0 +1,254 @@
+@extends('admin.layouts.app')
+
+@section('breadcrumb')
+    @include('admin.common.breadcrumbs')
+@endsection
+
+@push('stylesheet-page-level')
+@endpush
+
+@push('script-page-level')
+    <script src="{{ asset('assets/admin/js/adv_datatables/csrf_token.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/admin/js/adv_datatables/orders.js') }}" type="text/javascript"></script>
+@endpush
+
+@section('content')
+    <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Orders
+                        {{-- <small>
+                            Here you can edit or delete info pages
+                        </small> --}}
+                    </h3>
+                </div>
+            </div>
+            <!--            <div class="m-portlet__head-tools">
+                    <ul class="m-portlet__nav">
+                        <li class="m-portlet__nav-item">
+                            <div class="m-dropdown m-dropdown&#45;&#45;inline m-dropdown&#45;&#45;arrow m-dropdown&#45;&#45;align-right m-dropdown&#45;&#45;align-push" data-dropdown-toggle="hover" aria-expanded="true">
+                                <a href="{!! route('admin.dashboard.pages.edit', $pages = 0) !!}" class="btn btn-accent m-btn m-btn&#45;&#45;custom m-btn&#45;&#45;icon m-btn&#45;&#45;air m-btn&#45;&#45;pill">
+                                    <span>
+                                        <i class="la la-plus"></i>
+                                        <span>
+                                            Add Page
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>-->
+        </div>
+        <div class="m-portlet__body">
+            <!--begin: Search Form -->
+            <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 order-2 order-xl-1">
+                        <form class="form-group m-form__group row align-items-center" action="" id="manage-page-search">
+                            <div class="col-md-12" style="margin-top: -22px;margin-bottom: 15px;">
+                                <h3>Advance Search for Orders</h3>
+                            </div>
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" class="form-control m-bootstrap-select" name="order_number"
+                                            placeholder="Order Number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input onfocus="(this.type='date')" type="text"
+                                            class="form-control m-bootstrap-select" name="date_from"
+                                            placeholder="Date From">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input onfocus="(this.type='date')" type="text"
+                                            class="form-control m-bootstrap-select" name="date_to" placeholder="Date To">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" class="form-control m-bootstrap-select" name="user_name"
+                                            placeholder="User">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" class="form-control m-bootstrap-select" name="supplier_name"
+                                            placeholder="Supplier">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label class="m-label m-label--single" for="show-user-gender">
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <select class="form-control" id="payment_method" name="payment_method">
+                                            <option value="">Payment Method</option>
+
+                                            <option value="paypal">Paypal</option>
+                                            <option value="cash_on_delivery">Cash On Pickup</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="col-md-4">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label class="m-label m-label--single" for="show-user-gender">
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <select class="form-control" id="status" name="status">
+                                            <option value="">Status</option>
+
+                                            <option value="confirmed">Pending</option>
+                                            <option value="in-progress">In Progress</option>
+                                            <option value="cancelled">Cancelled</option>
+                                            <option value="completed">Completed</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" class="form-control m-bootstrap-select" name="min"
+                                            placeholder="Min Amount">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 m--margin-bottom-10">
+                                <div class="m-form__group m-form__group--inline">
+                                    <div class="m-form__label">
+                                        <label>
+                                        </label>
+                                    </div>
+                                    <div class="m-form__control">
+                                        <input type="text" class="form-control m-bootstrap-select" name="max"
+                                            placeholder="Max Amount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3 text-right">
+                                <button type="submit"
+                                    class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">Submit</button>
+                                <button id="page-reset"
+                                    class="btn btn-success m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--end: Search Form -->
+            <!--begin: Selected Rows Group Action Form -->
+            <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30 collapse"
+                id="m_datatable_group_action_form_page">
+                <div class="row align-items-center">
+                    <div class="col-xl-12">
+                        <div class="m-form__group m-form__group--inline">
+                            {{-- <div class="m-form__label m-form__label-no-wrap"> --}}
+                            {{-- <label class="m--font-bold m--font-danger-"> --}}
+                            {{-- Selected --}}
+                            {{-- <span id="m_datatable_selected_page"></span> --}}
+                            {{-- records: --}}
+                            {{-- </label> --}}
+                            {{-- </div> --}}
+                            {{-- <div class="m-form__control"> --}}
+                            {{-- <div class="btn-toolbar"> --}}
+
+                            {{-- &nbsp;&nbsp;&nbsp; --}}
+                            {{-- <button class="btn btn-sm btn-danger" type="button" id="m_datatable_check_all_pages"> --}}
+                            {{-- Delete --}}
+                            {{-- </button> --}}
+                            {{-- </div> --}}
+                            {{-- </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end: Selected Rows Group Action Form -->
+            <!--begin: Selected Rows Group Restore Form -->
+            <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30 collapse"
+                id="m_datatable_group_action_form_page_restore">
+                <div class="row align-items-center">
+                    <div class="col-xl-12">
+                        <div class="m-form__group m-form__group--inline">
+                            {{-- <div class="m-form__label m-form__label-no-wrap"> --}}
+                            {{-- <label class="m--font-bold m--font-danger-"> --}}
+                            {{-- Selected --}}
+                            {{-- <span id="m_datatable_selected_page_restore"></span> --}}
+                            {{-- records: --}}
+                            {{-- </label> --}}
+                            {{-- </div> --}}
+                            <div class="m-form__control">
+                                <div class="btn-toolbar">
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-sm btn-success" type="button"
+                                        id="m_datatable_check_all_pages_restore">
+                                        Restore
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end: Selected Rows Group Restore Form -->
+            <!--begin: Datatable -->
+            <div class="manage-pages" id="manage-pages"></div>
+            <!--end: Datatable -->
+        </div>
+    </div>
+@endsection

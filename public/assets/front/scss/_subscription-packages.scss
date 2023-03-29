@@ -1,0 +1,178 @@
+.subscription-packages {
+    .expiry-title {
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: $gray-600;
+        line-height: 3.1rem;
+        @include m-575 {
+            display: flex;
+            justify-content: center;
+        }
+        @include m-450 {
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+        }
+        strong {
+            font-weight: bold;
+            color: $secondary;
+            padding: 0 .4rem;            
+        }
+        margin-bottom: 6.1rem;
+    }
+}
+
+.subscription-card {
+    background-color: $white;
+    box-shadow: 0 0 6px rgba($black,.16);
+    margin-bottom: 5.3rem;
+    @include flex-box;
+    flex-direction: column;
+    transition: .4s all;
+    justify-content: space-between;
+    min-height: 32.8rem;
+    @include m-575 {
+        max-width: 29.1rem;
+        margin-left: auto;
+        margin-right: auto;                
+    }
+    &:hover {
+        box-shadow: 0 0 12px rgba($black,.26);
+        .header-block {
+            background-color: $secondary;            
+            .pack-type, .pack-price, .pack-time {
+                color: $white;
+            }
+        }
+    }
+    .header-block {
+        padding: 1.6rem;
+        background-color: $primary;
+        max-width: 76.2%;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        margin-top: -2.3rem;
+        transition: .4s all;
+        .pack-type {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-600;
+            line-height: 2rem;
+            text-transform: uppercase;
+            margin-bottom: .4rem;
+            max-width: 100%;
+
+        }
+        .pack-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $secondary;
+            line-height: 2.8rem;
+            margin-bottom: .3rem;
+            text-transform: uppercase;
+            max-width: 100%;
+        }
+        .pack-time {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-600;
+            line-height: 2rem;
+            text-transform: capitalize;   
+            max-width: 100%;          
+        }
+        
+    }
+    .desc-block {
+        padding: 1.3rem 2.2rem;
+        text-align: center;
+        @include chat-scroll-bar;
+        p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-600;
+            line-height: 2.4rem;
+            max-height: 16.8rem;
+            overflow-y: auto;
+            
+        }
+    }
+    .secondary-btn {
+        height: 5rem;
+    }
+    &.subscribed-pack {
+        .secondary-btn {
+            background-color: $text-e;
+            color: $gray-600;
+            &:hover {
+                color: $white;
+            }
+            &::before {
+                background-color: $secondary;
+            }
+        }
+    }
+    &.feature-card {
+        max-height: 25.2rem;
+        height: 100%;
+        justify-content: space-between;
+        margin-bottom: 9.3rem;
+        .header-block {
+            .pack-price {
+                text-transform: capitalize;
+            }
+        }
+        .desc-block {
+            p {
+                font-size: 1.8rem;
+                font-weight: 400;                
+                line-height: 2.25rem;
+                margin-bottom: 2.1rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+                text-align: center;
+            }
+            .price {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.8rem;
+                margin-bottom: 1rem;
+                &~p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &.purchase-pack {
+        max-height: 28.3rem;
+        .desc-block {
+            .p-text {
+                margin-bottom: 1rem;
+                -webkit-line-clamp: 3;
+            }
+            .perchase-count {
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 2.3rem;
+                margin-bottom: .5rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                .title {
+                    color: $secondary;
+                    padding: 0 .4rem;
+                }
+                .val {
+                    color: $gray-600;
+                }
+
+            }
+            .price {
+                margin-top: .6rem;
+            }
+        }
+    }
+}

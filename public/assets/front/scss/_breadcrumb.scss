@@ -1,0 +1,71 @@
+.banner-bread-section {
+  height: 35rem;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.banner-title-bread {
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 5.5rem;
+  line-height: 6.5rem;
+  color: $white;
+  margin-bottom: 3.3rem;
+  @include m-450 {
+    font-size: 4rem;
+    line-height: 5.5rem;
+    margin-bottom: 1.3rem;
+  }
+}
+
+.breadcrumb-link{
+  flex-wrap: wrap;
+  .item {
+      position: relative;
+      padding: 0 1.5rem;
+      font-family: Poppins;
+      font-weight: 500;
+      font-size: 2.6rem;
+      line-height: 2.5rem;
+      color: $white;
+      @include m-450 {
+        font-size: 1.8rem;
+      }
+      &:first-child{
+          padding-left: 0;
+      }
+      &:not(:last-of-type){
+        &::after{
+            content: '>';
+            display: inline-block;
+              font-size: 2.6rem;
+              font-weight: 500;
+              color: $white;
+              font-family: Poppins;
+              position: absolute;
+              transform: translateY(-50%);
+              top: 50%;
+              right: -.75rem;
+        }
+      }
+    .link {
+      color: $white;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+}
+
+// right direction css
+
+.rtl {
+  .breadcrumb-link .item:not(:last-of-type)::after {
+    left: -0.75rem;
+    right:auto;
+  }
+  .breadcrumb-link .item:first-child {
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+}

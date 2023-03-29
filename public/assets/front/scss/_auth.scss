@@ -1,0 +1,219 @@
+.login-sec {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+.login-text {
+  margin-bottom: 1.5rem;
+  .title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: $secondary;
+  }
+  .title-des {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: $text-6;
+    span {
+      color: $secondary;
+      font-weight: 400;
+    }
+  }
+}
+
+.forgot-password {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: $text-6;
+  margin-top: 1rem;
+  display: inline-block;
+  &.register-p {
+    color: $secondary;
+    font-weight: 400;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.line-or {
+  clear: both;
+  position: relative;
+  padding: 2.6rem 0px 3rem 0px;
+  span {
+    background: #707070;
+    height: 1px;
+    width: 100%;
+    display: block;
+  }
+  .ortext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 1.6rem;
+    color: $secondary;
+    background: $white;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+}
+
+.resend-b {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: $secondary;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.select-role-mt {
+  width: 100%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+  background-color: $white;
+}
+
+.role-checkbox {
+  height: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  &:not(:last-of-type) {
+    border-bottom: 2px solid rgba(102 102 102 / 30%);
+  }
+  p {
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    color: $secondary;
+  }
+
+  .role-radio {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+.remember-me {
+  margin-bottom: 2.3rem;
+  .prvc {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $text-6;
+    padding-left: 3.5rem;
+    padding-top: 0.1rem;
+
+    a {
+      color: $secondary;
+      font-weight: 400;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+.rtl .remember-me {
+  .prvc {
+    padding-left: 0rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.city-accordion {
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  cursor: pointer;
+  .btn {
+    height: 5.5rem;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    color: $secondary;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    .arrow-down-mt {
+      transform: rotate(180deg);
+      transition: all 0.4s;
+    }
+    &.collapsed {
+      .arrow-down-mt {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+
+.select-city-areas{
+  margin-bottom: 5rem;
+}
+.city-name-title h2 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  color: $secondary;
+  @include small-767{
+    max-width: 50%;
+    width: 100%;
+  }
+}
+
+.estimated-box{
+  max-width: 27.8rem;
+  width: 100%;
+  @include small-767{
+    max-width: 50%;
+  }
+}
+.city-input{
+  width: 100%;
+  max-width: 27.8rem;
+}
+.city-list-input {
+  &:not(:last-of-type){
+    margin-bottom: 0.5rem;
+  }
+  .city-name {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: $text-6;
+    @include small-767{
+      max-width: 50%;
+      width: 100%;
+    }
+  }
+}
+
+
+label.error, .error {
+  font-size: 1.4rem;
+  color: #dc3545 !important;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  transition: .4s ease-in-out;
+}
+input.error {
+  margin-top: 0;
+}
+
+label.text-danger {  
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+
+.alert {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}

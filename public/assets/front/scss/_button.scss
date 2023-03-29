@@ -1,0 +1,237 @@
+.primary-btn {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: $secondary-1;
+  height: 5.6rem;
+  max-width: 21rem;
+  background-color: $primary;
+  @include flex-box();
+  transition: 0.4s all;
+  outline: 0;
+  position: relative;
+  z-index: 1;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: $secondary-1;
+    &::before {
+      width: 100%;
+    }
+  }
+  &::before {
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $white;
+    transition: 0.4s all;
+    z-index: -1;
+  }
+}
+.secondary-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $white;
+  height: 4.5rem;
+  max-width: 23.5rem;
+  background-color: $secondary;
+  @include flex-box();
+  transition: 0.4s all;
+  outline: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  &:focus {
+    outline: 0;
+  }
+  &::before {
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $primary;
+    transition: 0.4s all;
+    z-index: -1;
+  }
+  &:hover {
+    color: $white;
+    &::before {
+      width: 100%;
+    }
+  }
+  &.border-btn {
+    background-color: $white;
+    border: 1px solid $secondary;
+    color: $secondary;
+    &::before {
+      background-color: $secondary;      
+
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+  &.btn-17 {
+    width: 17.5rem !important;
+    height: 5rem;
+  }
+  &.h-5 {
+    height: 5rem;
+  }
+}
+
+.arrow-btn {
+  background-image: url(../img/fill-shape.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45px;
+  height: 39px;
+  @include flex-box;
+  transition: 0.4s all;
+  svg {
+    transition: 0.4s all;
+  }
+  &:hover {
+    background-image: url(../img/slider-shape.png);
+    svg {
+      line {
+        stroke: $secondary;
+      }
+    }
+  }  
+}
+
+.chose-img-btn {
+  max-width: 10rem;
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 50%;
+  @include flex-box;
+  position: relative;
+  box-shadow: 0 3px 6px rgba($black,.16);
+  &:hover {
+    .cam-icon {
+      background-color: $secondary;
+    }
+  }
+  .cam-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background-color: rgba($text-3,.6);
+    transition: .4s;
+    width: 100%;
+    height: 3.344rem;
+    @include flex-box;
+    font-size: 2.3rem;
+    color: $white;    
+
+  }
+}
+
+// login button
+.login-btn {
+  height: 5rem;
+  line-height: 5rem;
+  background: $secondary;
+  font-family: Poppins;
+  font-weight: normal;
+  font-size: 1.8rem;
+  text-align: center;
+  color: $white;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  &::before {
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $primary;
+    transition: 0.4s all;
+    z-index: -1;
+  }
+  &:hover {
+    color: $white;
+    &::before {
+      width: 100%;
+    }
+  }
+  &.facebook-btn {
+    background: #377dff;
+    margin: 20px 0px;
+    i {
+      font-size: 1.5rem;
+      margin-right: 2rem;
+    }
+    &::before {
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #447EE9;
+    transition: 0.4s all;
+    z-index: -1;
+  }
+  &:hover {
+    color: $white;
+    &::before {
+      width: 100%;
+    }
+  }
+  }
+  &.google-btn {
+    background: #d4513b;
+    i {
+      font-size: 1.5rem;
+      margin-right: 2rem;
+    }
+    &::before {
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #F36148;
+    transition: 0.4s all;
+    z-index: -1;
+  }
+  &:hover {
+    color: $white;
+    &::before {
+      width: 100%;
+    }
+  }
+  }
+}
+// right direction css
+
+.rtl {
+  .primary-btn {
+    &::before {
+      left: auto;
+      right: 0;
+    }
+  }
+  .secondary-btn, .login-btn {
+    &::before {
+      left: auto;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.about-us-sec {
+    padding: 10rem 0 23.7rem;
+    background-color: $white;
+    position: relative;
+    @include m-450 {
+        padding: 6rem 0 14.7rem;
+    }
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
+    }
+}
+
+.about-home {
+    .about-desc-block{
+        .carousel-inner {
+            .about-desc {
+                .p-desc {
+                    overflow-y: hidden;
+                    padding-left: 0;
+                    padding-right: 0; 
+                }
+            }
+        }
+    }
+}
+
+.about-img-block {
+    max-width: 57rem;
+    width: 100%;
+    height: 78.3rem;
+    // height: 100%;
+    overflow: hidden;
+    @include flex-box();
+    background-color: #f1f1f1;
+    @include m-575 {
+        margin: auto;
+    }
+    @include m-450 {
+        height: auto; 
+    }  
+}
+.about-desc-block {
+    background-color: $secondary;
+    max-width: 57rem;
+    width: 100%;
+    max-height: 78.3rem;
+    height: 100%;
+    @include flex-box();
+    flex-direction: column;
+    @include medium-991 {
+        margin: auto;
+        padding: 2rem 0;
+    }
+    .carousel-inner {
+        max-width: 40rem;
+        @include medium-991 {
+            padding: 0 1.5rem;
+        }
+        @include small-767 {
+            padding: 0;
+        }
+        .about-desc {
+            @include m-450 {
+                padding: 3rem 1.5rem;
+            }
+            @include ctm-scroll-bar;
+            .p-desc{
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: $white;
+                line-height: 2.8rem;
+                max-width: 40rem;
+                min-height: 22.1rem;                
+                margin-bottom: 3.2rem;   
+                max-height: 59.1rem;       
+                overflow-x: hidden;
+                overflow-y: auto;  
+                padding-right: .5rem; 
+            }
+        }
+    }
+    .carousel-indicators {
+        margin: 0;
+        left: auto;
+        right: 0;
+        @include m-450 {
+            right: 3rem;
+            bottom: 1rem;
+        }
+        li {
+            height: .5rem;
+            width: 3.889rem;
+            opacity: 1;
+            background-color: $white;
+            margin: 0 .35rem;
+            &.active {
+                background-color: $primary;
+            }
+        }
+    }
+    .sm-headline {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 3rem;
+        color: $white;
+        position: relative;
+        padding-bottom: .7rem;
+        display: inline-flex;
+        margin-bottom: 5rem;
+        &::before, &::after {
+            content: "";
+            height: .2rem;
+            top: 100%;
+            position: absolute;
+            background-color: $primary;
+            display: inline-flex;
+            z-index: 9;
+        }
+        &::after {
+            width: 2.5rem;
+            right: 0;
+        } 
+        &::before {
+            width: 6.3rem;
+            left: 0;
+        } 
+    }
+}
+
+// right direction css
+
+.rtl {
+    .sm-headline {
+        &::after {            
+            right: auto;
+            left: 0;
+        } 
+        &::before {            
+            left: auto;
+            right: 0;
+        }
+    }
+    .about-desc-block .carousel-indicators {
+        left: 0;
+        right: auto;
+    }
+    .about-desc-block .carousel-inner .about-desc .p-desc {
+        padding-right: 0;
+        padding-left: .5rem;
+    }
+}

@@ -1,0 +1,383 @@
+.order-detail-content {
+    .order-title-row {
+        padding-bottom: 2rem;
+        border-bottom: .05rem solid $border-color;
+        .order-title-block {
+            max-width: 72%;
+            width: 100%;
+            @include large-1191 {
+                max-width: 62%;
+            }
+            @include medium-991 {
+                max-width: 70%;
+            }
+            @include m-575 {
+                max-width: 100%;
+            }
+            .title {
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.8rem;
+                color: $secondary;
+                margin-bottom: 1rem;
+            }
+            .order-place-date {
+                font-size: 1.6rem;
+                font-weight: 300;
+                color: $gray-900;
+                line-height: 2.3rem;
+                margin-bottom: .5rem;
+                .date {
+                    color: $secondary;
+                    font-weight: 400;
+                    padding: 0 .5rem;
+                }
+            }
+            .order-status {
+                font-size: 1.6rem;
+                font-weight: 300;
+                color: $gray-900;
+                line-height: 2.3rem;
+                .status-val {
+                    font-weight: 400;
+                    padding: 0 .5rem;
+                    &.acept {
+                        color: #23CC1D;
+                    }
+                    &.compl {
+                        color: #1D29CC;
+                    }
+                    &.cancl {
+                        color: #DF1717;
+                    }
+                    &.pend {
+                        color: #FFC107;
+                    }
+                    &.visit {
+                        color: #87ceeb;
+                    }
+                    &.quote {
+                        color: #1e90ff;
+                    }
+                }
+            }
+        }
+        .order-price-block {
+            @include m-575 {
+                align-items: flex-start !important;
+                margin-top: 3rem;
+            }
+            .secondary-btn {
+                width: 17.5rem;
+                height: 5rem;
+                margin-bottom: 3.5rem;
+            }
+            .order-price {
+                font-size: 2rem;
+                font-weight: 600;
+                color: $secondary;
+                line-height: 2.8rem;
+            }
+        }
+    }
+    .issue-block {
+        padding: 1.5rem 0;
+        border-bottom: .05rem solid $border-color; 
+        .title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $secondary;
+            line-height: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        .issue-img-block {
+            max-width: 18.2rem;
+            width: 100%;
+            height: 14.5rem;
+            overflow: hidden;
+            @include flex-box;
+            background-color: #f5f5f5;
+            margin-bottom: 1.4rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .title-sm {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.3rem;
+            color: $secondary;
+            margin-bottom: .4rem;
+        }
+        .p-text {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: $gray-900;
+            line-height: 2.3rem;
+        }
+    }  
+    .user-info-block {
+        .sup-img-block {
+            max-width: 7.5rem;
+            width: 100%;
+            height: 7.5rem;
+            overflow: hidden;
+            @include flex-box;
+            background-color: #f5f5f5;
+            box-shadow: 0 3px 6px rgba($black,.16);
+            margin-right: 1rem;            
+        }
+        .info-img-block{
+            width: 7.5rem;
+            min-width: 7.5rem;
+            height: 7.5rem;
+            background-color: #f5f5f5;
+            overflow: hidden;
+            @include flex-box;
+            border-radius: 1rem;
+            margin-right: 1rem;
+            img {
+                @include img-wh-100;
+            }
+        }
+        .user-desc {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $secondary;
+            margin-bottom: .4rem;
+        }
+        .user-no {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: $secondary;
+            line-height: 2.3rem;
+        }
+    } 
+    .service-block {
+        .img-block{
+            width:12.3rem;
+            min-width: 12.3rem;
+            height: 6.5rem;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            margin-right: 1rem;
+            @include flex-box;
+            img {
+                @include img-wh-100;
+            }
+        }
+        .desc-block{
+            .star-rating-area {
+                height: 1.5rem;
+                margin-bottom: .3rem;
+            }
+            .star-rating-area .rating-static > label {
+                line-height: 1.1rem;
+            }
+            .star-rating-area .rating-static > label:before {
+                font-size: 1.2rem;
+                margin-left: 0.1rem;
+                margin-right: 0.1rem;
+            }
+            .star-rating-area .ratilike {
+                line-height: 1.5rem;
+                margin-left: 0.4rem;
+                font-weight: 400;
+                margin-top: 0;
+                font-size: 1rem;
+            }
+            .text-p {
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $secondary;
+                line-height: 2.3rem;
+                margin-bottom: .4rem;
+            }
+            .serv-price {
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.3rem;
+            }
+        }
+    } 
+    .order-summary-block {
+        .summary-box {
+            max-width: 41rem;
+            .title-value-row {
+                margin-bottom: .4rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .title {
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    color: $gray-900;
+                    line-height: 2.5rem;
+
+                }
+                .value {
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    color: $secondary;
+                    line-height: 2.5rem;
+
+                }
+                &.total-row {
+                    .title {
+                        font-weight: 600;
+                        color: $secondary;
+                    }
+                    .value {
+                        font-weight: 600;                        
+                    }
+                }
+            }
+        }
+    }
+    .my-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: $secondary;
+        line-height: 2.8rem;
+        margin-bottom: .3rem;
+    }
+    .my-sm-title {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $secondary;
+        line-height: 2.3rem;        
+    }
+    .primary-text-p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: $gray-900;
+        line-height: 2.3rem;
+        margin-bottom: .4rem;
+    }
+    a.primary-text-p {
+        transition: .4s ease-in-out;
+        &:hover {
+            color: $primary;
+        }
+    }
+    .awaiting-title {
+        font-size: 2rem;
+        line-height: 2.8rem;
+        color: $secondary;
+        svg {
+            margin: 0 .8rem;
+        }
+    }
+    .visit-fee {
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: $gray-900;
+        line-height: 2.5rem;
+        margin-top: .6rem;
+        span {
+            padding: 0 .5rem;
+            &.prc {
+                padding: 0;
+                font-weight: 400;
+                color: $secondary;
+            }
+        }
+
+    }
+    .user-order-dt-block {
+        min-width: 30rem;
+        .secondary-btn {
+            min-width: 30rem;
+            height: 5rem;
+        }
+        .visit-fee {
+            
+            span {
+                font-size: 2rem;
+                font-weight: 600;
+                color: $secondary;
+                line-height: 2.8rem;
+                margin-top: 3.2rem;
+            }
+            .prc {
+                padding: 0 .5rem;
+            }
+
+        }
+    }
+    .rate-link {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        color: $gray-600;
+        text-decoration: underline;
+        transition: .4s all;
+        padding: 0 2.1rem;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.py-bb {
+    padding: 1.5rem 0;
+    border-bottom: .05rem solid $border-color;
+}
+
+.invoice-dd {
+    
+    .secondary-btn {
+        .arrow-down {
+            transition: .4s all;
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+        box-shadow: 0 0 6px rgba($black,.16);
+        text-align: center;        
+        border-radius: 0;
+        border: 0;
+        padding: 0;
+        .dropdown-item {
+            font-size: 1.6rem;
+            color: $secondary;
+            line-height: 1.7rem;
+            font-weight: 400;
+            padding: 1.65rem 0;
+            transition: .4s all;
+            &:hover {
+                color: $white;
+                background-color: $secondary;
+            }
+        }
+    }
+    &.show {
+        .secondary-btn {
+            .arrow-down {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    
+}
+
+// right direction css
+
+.rtl {
+    .order-detail-content .user-info-block .info-img-block {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    .order-detail-content .service-block .img-block {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+
+    .order-detail-content .user-info-block .sup-img-block {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}

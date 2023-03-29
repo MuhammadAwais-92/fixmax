@@ -1,0 +1,190 @@
+.manage-orders {
+
+}
+
+.order-list-card {
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 0 3px rgba($black,.16);
+    margin-bottom: 2rem;
+    .orderlist-desc {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #707070;
+        
+        .order-name {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: $secondary;
+            line-height: 2.3rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+            text-align: left;
+        }
+        .order-time {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-900;
+            margin-bottom: .6rem;
+            line-height: 2rem;
+            .order-date-time {
+                font-weight: 400;
+                color: $secondary;
+                padding: 0 .5rem;
+            }
+        }
+        .status {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-900;
+            line-height: 2rem;
+            .status-value {
+                font-weight: 400;
+                padding: 0 .5rem;
+                &.acept {
+                    color: #23CC1D;
+                }
+                &.compl {
+                    color: #1D29CC;
+                }
+                &.cancl {
+                    color: #DF1717;
+                }
+                &.pend {
+                    color: #FFC107;
+                }
+                &.visit {
+                    color: #87ceeb;
+                }
+                &.quote {
+                    color: #1e90ff;
+                }
+            }
+        }
+    }
+    .visit-price {
+        line-height: 2.3rem;
+        align-items: center;
+        .title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $gray-900;
+            padding: 0 1rem;                
+        }
+        strong {
+            color: $secondary;
+            font-size: 1.6rem;
+            font-weight: bold;                
+        }
+        p {
+            color: $secondary;
+            font-size: 1.6rem;
+            font-weight: 400; 
+        }
+        &.user-visit-price-block {
+            .title {
+                padding: 0 .5rem;
+            } 
+            .secondary-btn {
+                height: 4rem;
+                max-width: 11.5rem;
+                font-size: 1.4rem;
+                margin-top: .8rem;
+            }
+        }
+    }
+    .order-list-img-block {
+        padding-top: 1.5rem;
+        .order-img-price-row {
+            .img-block {
+                width: 12.3rem;
+                min-width: 12.3rem;
+                height: 6.5rem;
+                overflow: hidden; 
+                @include flex-box;
+                background-color: #f5f5f5;  
+                margin-right: 1rem;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .service-name {
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $secondary;
+                line-height: 2.3rem;
+                margin-bottom: .4rem;
+                text-align: left;
+            }
+            .price {
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.3rem;
+            }
+        }
+    }
+}
+
+.nav-pills {
+    box-shadow: 0 0 6px rgba($black,.16);  
+    @include m-450 {
+        flex-direction: column;
+    }  
+    .custom-tab {
+        border-right: .05rem solid $gray-600;
+        flex: 1;
+        @include m-450 {
+            border-right: 0;
+            border-bottom: .05rem solid $gray-600;
+        } 
+        &:last-child {
+            border-right: 0;
+            @include m-450 {
+                border-bottom: 0;
+            }
+        }
+        .nav-link{
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $secondary;
+            background-color: $white;
+            height: 5rem;
+            @include flex-box;
+            transition: .4s all;
+            text-align: center;
+            border-radius: 0;
+            text-transform: capitalize;
+            &:hover,&.active {
+                background-color: $secondary;
+                color: $white;
+            }
+        }
+    }
+}
+
+// right direction css
+
+.rtl {
+    .nav-pills {
+        .custom-tab {
+            border-right:0;
+            border-left: .05rem solid $gray-600;
+            @include m-450 {
+                border-left: 0;
+                border-bottom: .05rem solid $gray-600;
+            } 
+            &:last-child {
+                border-left: 0;
+                @include m-450 {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .order-list-card .order-list-img-block .order-img-price-row .img-block {
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}

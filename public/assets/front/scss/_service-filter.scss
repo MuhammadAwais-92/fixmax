@@ -1,0 +1,97 @@
+.service-filter {
+    box-shadow: 3px 0 8px rgba($black,.13);
+    background-color: $white;
+    .title-block {
+        background-color: $secondary;
+        height: 6rem;
+        padding: .5rem 1.5rem;
+        color: $white;
+        .title{
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+        }
+        .close-btn {
+            svg {
+                path {
+                    transition: .4s ease-in-out;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: $primary;
+                    }
+                }  
+            }
+        }
+    }
+    .filter-inner {
+        padding: 2rem 1.5rem;
+        .common-input {
+            margin-bottom: 2rem;
+        }
+    }
+    .search-box {
+        position: relative;
+        .search-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include flex-box;
+            width: 4.5rem;
+            height: 4.5rem;
+
+        }
+    }
+    .price-range-block {
+        img {
+            margin-bottom: .3rem;
+        }
+        .price-titles {
+            padding: 0 3.5rem 0 2.1rem;
+            > span {
+                font-size: 1.4rem;
+                font-weight: 300;
+                line-height: 2rem;
+                color: $gray-900;
+            }
+        }
+    }
+    .irs--round {
+        .irs-handle {
+            background-color: $primary !important;
+            transition: .4s ease-in-out;
+            border-color: $primary;
+            cursor: pointer;
+            &:hover {
+                border-color: $secondary;
+                background-color: $secondary !important;
+            }
+    }
+    .irs-from, .irs-to  {
+        background-color: $secondary;
+        &::before {
+            border-top-color: $secondary;
+        }
+    }
+    .irs-bar , .irs-max, .irs-min{
+        background-color: $primary;
+        color: $white;
+    }
+        
+    }
+}
+
+// right direction css
+
+.rtl {
+    .service-filter .search-box .search-btn{
+        right: auto;
+        left: 0;
+    }
+    .service-filter {
+        box-shadow: -3px 0 8px rgba($black,.13);
+    }
+}

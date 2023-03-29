@@ -1,0 +1,25 @@
+.commen-title {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 3.5rem;
+  color: $secondary;
+  margin-bottom: 5.4rem;
+  span{
+    border-bottom: 2px solid $primary;
+    padding-bottom: 0.9rem;
+  }
+}
+
+.page-detail-p {
+  p {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: $text-6;
+
+    &:empty {
+      display: none;
+    }
+  }
+}

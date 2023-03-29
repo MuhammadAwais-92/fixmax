@@ -1,0 +1,93 @@
+.banner-section {
+    // background-image: url(../img/banner-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height: 82.2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+    width: 100%;  
+    @include m-575 {
+        height: 65.2rem;
+    }
+    .banner-desc {
+        @include m-575 {
+            margin-bottom: 20%;
+        }
+        @include m-450 {
+            margin-bottom: 30%;
+        }
+
+    }
+    .bann-search-box {
+        position: relative;
+        box-shadow: 0 0 6px rgba($black,.16);
+        max-width: 61.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        > input {
+            max-width: 100%;
+            height: 5rem;
+            border: 0;
+            outline: 0;
+            width: 78.7%;
+            padding: 2rem;
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 2rem;
+            color: $gray-900;
+            @include m-450 {
+                max-width: 71.7%;
+            }
+            &::placeholder {
+                font-size: 1.4rem;
+                font-weight: 300;
+                line-height: 2rem;
+                color: $text-c;  
+            }
+        }
+        > .primary-btn {
+            max-width: 21.3%;
+            width: 100%;
+            height: 5rem;
+            font-size: 2rem;
+            @include m-450 {
+                max-width: 28.3%;
+            }
+            &::before {
+                background-color: $secondary;
+            }
+            &:hover {
+                color: $white;
+            }
+        }        
+    }
+    .banner-title {
+        font-size: 5.5rem;
+        font-weight: bold;
+        color: $white;
+        line-height: 6.5rem;
+        @include m-450 {
+            font-size: 4.5rem;
+            line-height: 5.5rem;
+        }
+        span {
+            color: $primary;
+        }
+    }
+    .p-desc {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $white;
+        line-height: 2.5rem;
+        margin-bottom: 3rem;
+        max-width: 46.5rem;
+    }
+}
+.location-drop{
+    .select2-container--default .select2-selection--single{
+        background-color: transparent !important;
+    }
+}
+

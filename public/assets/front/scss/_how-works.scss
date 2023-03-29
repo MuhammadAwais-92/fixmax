@@ -1,0 +1,138 @@
+.how-work{
+    background-color: $secondary;
+    min-height: 48.3rem;
+    position: relative;
+    padding: 3rem 0;
+    z-index: -2;
+    overflow: hidden; 
+    .line-img-block {
+        position: absolute;
+        left: -1.2rem;
+        right: 0; 
+        top: 60%;
+        transform: translateY(-50%);
+        z-index: -1;
+        @include medium-991 {
+            display: none;
+        }
+        svg { 
+            path {
+                // stroke-dasharray: 2200;
+                // stroke-dashoffset: 2200;                           
+                // animation: lineDraw 5s linear forwards;
+                // animation-delay: 5s; 
+                // stroke: #022c44;  
+                // stroke: #f7eee1;             
+                // stroke-dasharray: 940;
+                // stroke-dashoffset: 940;
+            }                                                                                             
+        }
+    }    
+    .works-main-block {
+        max-width: 1450px;
+        margin: 0 auto;
+    }
+}
+.grid-row {
+    @include medium-991 {
+        justify-content: center !important;
+    }
+}
+
+.how-work-card {
+    @include m-450 {
+        margin-bottom: 2rem;
+    }
+    
+    .icon-block {
+        margin-bottom: 2rem;
+        z-index: 10;
+        transform: translateX(100%); 
+        opacity: 0;       
+        .work-icon {
+            background-color: $secondary;
+            padding:  .8rem 1rem;
+        }        
+    }
+    .desc-block {
+        max-width: 28.4rem;
+        transform: translateX(100%); 
+        opacity: 0;                       
+    }
+    .title{
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 2.8rem;        
+        color: $white;
+        margin-bottom: .8rem;
+    }
+    .p-desc{
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $white;
+        line-height: 2.5rem;
+    }
+    
+
+    
+
+   
+}
+
+.sec-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: $white;
+    line-height: 4.9rem;
+    padding-top: 1.6rem;
+    margin-bottom: 9rem;
+    @include m-575 {
+        margin-bottom: 4rem;
+    }
+}
+
+.run-animation {
+        
+    .c-dashed-line__path {
+        animation: lineDraw 4.5s linear forwards;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 2200;
+        stroke-dashoffset: 2200;
+        stroke-width: 5;
+        animation-delay: 1s;
+        @include large-1191 {
+            animation-delay: 2s;
+        }
+    }
+    
+    .c-dashed-line__dash {
+        fill: none;
+        stroke: #022c44; /* this must match the background color */
+        stroke-dasharray: 20; /* draws a 10px dash line with a 16px gap between */
+        stroke-width: 8; /* make the dashed line slightly bigger than the one it's covering */
+        animation-delay: 1s;
+        @include large-1191 {
+            animation-delay: 2s;
+        }
+    }
+    .how-work-card {
+        .icon-block, .desc-block {
+            animation: fadLeft .8s ease-in-out forwards;
+            animation-delay: 2s;                        
+        }         
+        &:nth-child(2) {
+            .desc-block, .icon-block  {
+                animation-delay: 2.5s;
+            }
+        }
+        &:nth-child(3) {
+            .desc-block, .icon-block  {
+                animation-delay: 3s;
+            }
+        }
+    }
+    
+}
+
+ 

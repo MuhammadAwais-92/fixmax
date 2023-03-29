@@ -1,0 +1,42 @@
+
+@font-face{
+    font-family:'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Gilroy-Bold.ttf)
+}
+@font-face{
+    font-family:'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Gilroy-Medium_0.ttf)
+}
+@font-face{
+    font-family:'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Gilroy-Regular.ttf)
+}
+@font-face{
+    font-family:'Gilroy';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/ExtraBold.otf)
+}
+
+@mixin primary-extrabold {
+    font-family:'Gilroy';
+    font-weight: 900;
+}
+@mixin primary-bold {
+    font-family:'Gilroy';
+    font-weight: 700;
+}
+@mixin primary-medium {
+    font-family:'Gilroy';
+    font-weight: 500;
+}
+@mixin primary-regular {
+    font-family:'Gilroy';
+    font-weight: 400;
+}

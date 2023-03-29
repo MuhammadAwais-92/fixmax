@@ -1,0 +1,111 @@
+.ctm-pagination {
+    margin-top: 2rem;
+    @include m-575 {
+        justify-content: center !important;
+    }
+    .pagination {
+        background-color: $white;
+        border: 0;
+        box-shadow: 0 3px 6px rgba($black,.16);
+        height: 5.9rem;
+        margin-bottom: 0;
+        align-items: center; 
+        padding: 1rem 0; 
+        .page-item {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $gray-600;
+            .arrow-btn {
+                background-image: url(../img/slider-shape.png);
+                margin: 0 1rem;
+                &:hover, &.active {
+                    background-image: url(../img/fill-shape.png);
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }      
+        .page-link {
+            border: 0;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $gray-600;
+            padding: 0.3rem 0.955rem !important;
+            line-height: 2.5rem;
+            transition: .3s ease-in-out; 
+            margin: 0;   
+            position: relative; 
+            overflow: hidden; 
+            background-color: transparent;      
+            &:hover, &.active {
+                
+                &::after {
+                    height: 100%;
+                }
+                color: $secondary;
+                background-color: $primary;
+            }
+            &:focus {
+                box-shadow: unset;
+            }            
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: $primary;
+                width: 3rem;
+                height: 0;
+                transition: .3s ease-in-out;
+                z-index: -1;
+            }            
+        }
+        .prev-next-btn {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: $primary;
+            transition: .4s all;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            padding: .5rem 1rem !important;
+            margin: 0 0.5rem !important;
+            &:hover {
+                background-color: #ccc;                
+                box-shadow: 0 0 6px rgba($black,.16);
+                color: $white;
+                svg {
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+            svg {   
+                margin: 0 .3rem; 
+                @include m-575 {
+                    max-width: 10%;
+                }            
+                path {
+                    fill: $primary;
+                    
+                }                
+         
+            }
+        }
+        .page-inner {
+            @include m-450 {
+                max-width: 18rem;
+                overflow-x: auto;
+            }
+        }
+    }
+}
+
+// right direction css
+
+.rtl {
+    .ctm-pagination .pagination .page-item .arrow-btn {
+        transform: scale(-1);
+    }
+}

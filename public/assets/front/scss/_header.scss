@@ -1,0 +1,451 @@
+.site-header{
+    background-color: $secondary-1;
+    padding: 1.4rem 0;
+    position: relative;
+    @include m-450 {
+        height: 30rem;
+    }
+    &::before {
+        content: "";
+        height: 14rem;
+        max-width: 20.5%;
+        width: 100%;
+        background-color: $primary;
+        position: absolute;
+        left: 0;
+        top: 0;
+        clip-path: polygon(0 -300%, 0 370%, 100% 50%);
+        @include large-min-3000{
+            clip-path: polygon(0 -800%,0 838%,100% 50%);
+            max-width: 35.5%;
+        }
+        @include large-1191 {
+            max-width: 30.5%;
+        }
+        @include m-450 {
+            height: 15rem;
+            max-width: 60.5%;
+        }
+        @include m-325 {
+            max-width: 70.5%; 
+        }
+    }
+    .top-bar{
+        background-color: $primary;
+        padding: 1.75rem 3.1rem;
+        max-width: 63.3rem;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        bottom: -3.1rem;
+        clip-path: polygon(100% -1000%, 100% 1200%, 0 50%);        
+        @include large-1440 {
+            max-width: 53.3rem;
+        }
+        @include medium-991 {
+            max-width: 56.3rem;
+        }
+        @include m-575 {
+            max-width: 46.3rem;
+            padding: 1.75rem 1.3rem;
+        }
+        @include m-450 {
+            max-width: 45.3rem;
+            padding: 1.75rem 2.1rem;
+        }
+        @include m-325 {
+            padding: 1.75rem 1.5rem;
+        }
+        .link {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $secondary-1;
+            transition: .4s all;
+            margin: 0 1.35rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; 
+            &:first-child {
+                max-width: 40%;
+            }
+            &:last-child {
+                max-width: 60%;
+            }
+            @include m-575 {
+                font-size: 1.6rem;
+                margin: 0 1rem;
+            }
+            @include m-450 {
+                font-size: 1.4rem;
+                margin: 0 .5rem;
+            } 
+            @include m-325 {
+                font-size: 1.3rem;
+                margin: 0 .3rem;
+            }
+            .icons {
+                margin-right: .8rem;
+                transition: .4s all;
+                @include m-450 {
+                    max-width: 70%;
+                    margin-right: .3rem;
+                } 
+            }
+            &:hover {
+                color: $white;
+                .icons{
+                    filter: brightness(0) invert(1);
+                } 
+            }
+        }
+    }
+
+    .logo-block {
+        padding: 0;
+        max-width: 12.2rem;
+        height: 11.2rem;
+        @include flex-box();
+        overflow: hidden;
+        margin-right: 17.5rem;
+        @include large-1440 {
+            margin-right: 17.5rem;
+        }
+        @include large-1191 {
+            margin-left: 6%;
+        }
+        @include medium-991 {
+            margin-left: 5%;
+        }
+        @include m-575 {
+            margin-left: 0;
+        }        
+        @include m-450 {
+            margin-right: 0;
+            margin-left: 10%;
+        }
+    }
+    .noti-user-block {
+        margin-left: auto;
+        @include m-550 {
+            margin-bottom: 3rem;
+        }
+        @include m-450 {
+            margin-top: 7.5rem;
+            width: 100%;
+            justify-content: center;
+        }
+        .notifictaion-block {
+            margin-right: 5.9rem;
+            @include large-1440 {
+                margin-right: 1.9rem;
+            }
+        }
+        .noti-btn {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $white;
+            transition: .4s all;
+            svg {
+                margin-right: 1rem;
+                transition: .4a all;
+            }
+            &:hover {
+                color: $primary;
+                svg {
+                    path, ellipse {
+                        fill: $primary;
+                    }
+                }
+                .icon-count{
+                    background-color: rgba($primary,.95);
+                }
+            }
+            .icon-count {
+                position: absolute;
+                left: 0.8rem;
+                top: -0.5rem;
+                background: $primary;
+                border-radius: 1rem;
+                width: 2.2rem;
+                height: 2.2rem;                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+                color: $secondary;
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+    .navbar-nav {
+        @include large-1191 {
+            display: none;
+        } 
+    }
+    .navbar {
+        padding: 0;          
+        .nav-item {
+            &:not(:last-child){
+                margin-right: 4.7rem;
+            }
+            @include large-1440 {
+                &:not(:last-child){
+                    margin-right: 2.7rem;
+                }
+            }
+            .nav-link {
+                padding: 0;
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: $white;
+                transition: .4s all;
+                &:hover, &.active {
+                    color: $primary;
+                    font-weight: bold;
+                }
+            }
+        }     
+    }
+    .menu-icon {
+        position: absolute;
+        right: 3rem;
+        top:3rem;
+        z-index: 888;
+        cursor: pointer;
+        @include min-1192 {
+            display: none;
+        }
+        @include large-1191 {
+            left: 46%;
+            top: 50%;
+            transform: translateY(-50%);
+            right: auto;
+        }
+        @include m-575 {
+            left: 34%;
+        }
+        @include m-450 {
+            right: 4rem;
+            top: 5rem;
+            left: auto;
+        }
+        i {
+            font-size: 4.5rem;
+            color: $white;
+            transition: .4s all;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .map-icon {
+        font-size: 1.6rem;
+        color: $white;
+        transition: .4s ease-in-out;
+        margin: 0 2rem;
+        &:hover {
+            color: $primary; 
+        }
+        @include medium-991 {
+            margin: 0 -2rem;
+        }
+        @include m-575 {
+            margin: 0 -4rem;  
+        }
+        @include m-450 {
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            margin: 0 -2rem;
+        }
+    }
+    .ctm-dropdown.lang-dd {
+        @include large-1440 {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }        
+    }
+
+}
+
+.mobile-menu {
+    background: $secondary;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 12px 20px rgba($black,.16);
+    padding: 0;
+    transition: .4s all;
+    transform: translateX(-100%);
+    padding: 3rem 0;
+    @include min-1192 {
+        display: none;
+    }
+    .close-btn {
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        cursor: pointer;
+        i {
+            color: $white;
+            font-size: 4.5rem;
+            transition: .4s all;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .navbar-nav {
+        margin-left: 10%;
+        .nav-link {
+            padding: 0;
+            font-size: 2.6rem;
+            font-weight: 400;
+            color: $white;
+            transition: .4s all;
+            text-align: center;
+            margin-bottom: 1rem;            
+            &:hover, &.active {
+                color: $primary;
+                font-weight: bold;
+            }
+        }
+    }
+    .mobile-logo {        
+        margin-left: 10%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        .img-fluid {
+            max-width: 50%;
+        }
+    }
+}
+
+// right direction css
+
+.rtl {
+    .site-header{
+        &::before {
+            left: auto;
+            right: 0;
+            transform: scaleX(-1);
+        }
+        .noti-user-block {
+            margin-left: 0;
+            margin-right: auto;            
+            .notifictaion-block {
+                margin-left: 5.9rem;
+                margin-right: 0;
+                @include large-1440 {
+                    margin-left: 1.9rem;
+                    margin-right: 0;
+                }
+            } 
+            .noti-btn svg {
+                margin-right: 0;
+                margin-left: 1rem;
+            }           
+        }
+        .navbar .nav-item{
+            
+            &:not(:last-child){
+                margin-left: 4.7rem;
+                margin-right: 0;
+            }
+            @include large-1440 {
+                &:not(:last-child){
+                    margin-left: 2.7rem;
+                    margin-right: 0;
+                }
+            }
+        }
+        .logo-block {
+            margin-left: 17.5rem;
+            margin-right: 0;
+            @include large-1440 {
+                margin-left: 17.5rem;
+                margin-right: 0;
+            }
+            @include large-1191 {
+                margin-right: 6%;
+                margin-left: 0;
+            }
+            @include medium-991 {
+                margin-right: 5%;
+                margin-left: 0;
+            }
+            @include m-575 {
+                margin-left: 0; 
+                margin-right: 0;               
+            }
+            @include m-450 {
+                margin-left: 0;
+                margin-right: 10%;
+            }
+        }        
+        .top-bar {
+            left: 0;
+            right: auto;
+            clip-path: polygon(0 -1000%, 0 1200%, 100% 50%);  
+            .link .icons {
+                margin-left: 0.8rem;
+                margin-right: 0;
+                @include m-450 {
+                    margin-left: 0.3rem;
+                    margin-right: 0;
+                }
+            }          
+        }
+        .menu-icon {            
+            @include large-1191 {
+                right: 46%;
+                left: auto;                                             
+            }
+            @include m-575 {
+                left: auto;
+                right: 34%;                
+            }
+            @include m-450 {
+                left: 4rem;
+                right: auto;
+            }
+        }
+    }
+    .mobile-menu {
+        right: 0;
+        left: auto;
+        transform: translateX(100%);
+        .close-btn {
+            right: auto;
+            left: 3rem;
+        }
+        .navbar-nav {
+            margin-right: 10%;
+            margin-left: 0;
+        }
+    } 
+    .mobile-logo {        
+        margin-right: 10%;
+        margin-left: 0;        
+    }
+    .site-header .noti-user-block .noti-btn .icon-count {
+        left: auto;
+        right: .8rem;
+    }
+    .site-header .map-icon {
+        @include m-450 {
+            left: auto;
+            right: 75%;
+        }
+    }
+}

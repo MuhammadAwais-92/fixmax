@@ -1,0 +1,32 @@
+.services-main-content {
+    .secondary-btn {
+        max-width: 20rem;
+        height: 5rem;
+    }
+}
+
+.visit-fee-block {
+    max-width: 30.4rem;
+    width: 100%;
+    .title {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $secondary;
+        line-height: 2.3rem;
+    }
+}
+
+// right direction css
+
+.rtl {
+    .services-card.feature-services .feature-box {
+        left: auto;
+        right: 0;
+    }
+    .services-card.feature-services .cate-block {
+        clip-path: polygon(100% -750%, 100% 850%, 0 50%);
+        &::after {
+            clip-path: polygon(100% -750%, 100% 850%, 0 50%);
+        }
+    }
+}

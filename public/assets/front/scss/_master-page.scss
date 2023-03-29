@@ -1,0 +1,139 @@
+.master-page {
+    .master-tabs {
+        border-radius: 0;
+       .nav-link {
+           font-size: 1.6rem;
+           padding: 1rem 3rem;
+           height: 7rem;
+           border-radius: 0;
+           transition: .4s ease-in-out;
+           color: $secondary;
+           border-bottom: 1px solid $secondary;
+           align-items: center;
+           display: flex;
+           position: relative;
+           &:last-child {
+               border-bottom: 0;
+           }           
+           &::after {
+               content: '';
+               position: absolute;
+               left: 0;
+               top: 0;
+               width: 0;
+               background-color: $secondary;
+               transition: .4s ease-in-out;
+               height: 100%;
+               z-index: -1;               
+           }
+           &:hover, &.active {
+            color: $white;                      
+            &::after {
+                width: 100%;
+            }
+            &.active {
+                background-color: $secondary;
+            }
+        }
+       } 
+       max-height: 600px;
+       overflow-y: auto;
+    }
+    .class-desc {
+        font-size: 1.4rem;
+        color: $gray-600;
+        code {
+            font-size: 90%;
+            color: #e83e8c;
+            padding: 0.1rem 0.4rem;
+            background-color: #eee;
+            border-radius: 0.1785rem;
+        }
+    }
+    .flex-1 {
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    .card-bg {
+        padding: 2.5rem 1rem;
+        background-color: #fff;   
+        max-height: 600px;
+        overflow-y: auto;    
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%); 
+    }
+
+    @include ctm-scroll-bar();
+
+    .master-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $secondary;
+        margin-bottom: 1.5rem;
+    }
+
+    .color-bg {
+        width: 12rem;
+        height: 12rem;        
+        &.primary {
+            background-color: $primary;
+        }
+        &.secondary {
+            background-color: $secondary;
+        }
+        &.white{
+            background-color: $white;
+            box-shadow: 0 0 12px rgba($black,.16);
+        }
+        &.black{
+            background-color: $black;            
+        }
+        &.gray-bg{
+            background-color: $bg-gray;
+        }
+        &.gray-600{
+            background-color: $gray-600;
+        }
+        &.gray-800{
+            background-color: $gray-800;
+        }
+        &.gray-900{
+            background-color: $gray-900;
+        }        
+        &.border-color{
+            background-color: $border-color;
+        }
+        &.text-2{
+            background-color: $text-2;
+        }
+        &.text-3{
+            background-color: $text-3;
+        }
+        &.text-e{
+            background-color: $text-e;
+        }
+        &.text-c{
+            background-color: $text-c;
+        }
+    }
+
+    .px-15 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .display-box {
+        border: 1px solid $border-color;
+        padding: 2rem;
+        font-size: 1.8rem;
+        color: $secondary;
+        font-weight: 600;
+        text-align: center; 
+        height: 10rem;   
+    }
+}
+
+.master-header {
+    background-color: $primary;
+    padding: 5rem;
+}

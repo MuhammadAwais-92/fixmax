@@ -1,0 +1,329 @@
+.our-services {
+    padding: 12rem 0 4rem 0;
+    @include m-450{
+        padding: 5rem 0 1rem 0;
+    }
+}
+.services-card {
+    box-shadow: 0 3px 10px rgba($black,.16);
+    position: relative;
+    transition: .4s all;
+    margin-bottom: 6rem;
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+    .img-block {
+        height: 18.8rem;
+        overflow: hidden;
+        .services-img, video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &:hover {
+        box-shadow: 0 12px 20px rgba($secondary,.36);
+        .cate-block {
+            color: $white;
+            &::after {
+                width: 100%;
+            }
+        }
+        .arrow-btn {
+            animation: myMove .5s ease-in-out;
+        }
+    }
+    .discount {
+        font-size: 1.6rem;        
+        color: $white;
+        background-color: $secondary;
+        padding: 0.7rem;
+        line-height: 2rem;
+        text-transform: uppercase;
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        font-family: 'san_francisco_semibold';
+    }
+    .cate-block {
+        font-size: 1.6rem;
+        font-weight: bold;
+        line-height: 2.5rem;
+        background-color: $primary; 
+        color: $secondary;       
+        height: 3.9rem;
+        display: flex;
+        align-items: center;
+        padding: 0 1.6rem;
+        width: 52.5%;
+        position: absolute;
+        left: 0;
+        top: -1.95rem;
+        clip-path: polygon(0 -550%, 0 650%, 100% 50%);        
+        z-index: 1;
+        transition: .4s all;
+        @include large-1191 {
+            width: 80.5%;
+        }
+        @include m-575 {
+            width: 72.5%;
+        }
+        @include m-450 {
+            width: 62.5%;
+        }
+        @include m-325 {
+            width: 65.5%;
+        }
+        &::after {
+            content: "";
+            width: 0;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: $secondary;
+            transition: .4s all;
+            z-index: -1;
+            clip-path: polygon(0 -550%, 0 650%, 100% 50%);
+        }
+    
+    }
+    .desc-block {
+        position: relative;
+        background-color: $white;
+        padding: 3.3rem 1.5rem 1.5rem 1.5rem;
+        .title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $secondary;
+            line-height: 2rem;
+            margin-bottom: .2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 57%;
+            @include large-1191 {
+                
+                max-width: 50%;
+            }
+        }
+        .stars{
+            .fa-star {
+                font-size: 1.2rem;
+                color: #FFC107;
+            }
+            .no {
+                font-size: 1.1rem;
+                font-weight: 400;
+                line-height: 1.7rem;
+                color: $secondary;
+                padding-left: .4rem;
+            }
+        }
+        .price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 2.5rem;
+            color: $secondary;
+        }
+        .arrow-btn {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -2.25rem;
+            &:hover {
+                animation: none;
+            }
+        }
+    }
+    &.feature-services {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 3rem;
+        // max-width: 262px;
+        @include m-450 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .discount {
+            font-size: 1.3rem;
+            top: 0.7rem;
+            padding: 0.375rem 0.9rem;
+
+        }
+        .star-rating-area {
+            height: 1.7rem;
+            margin-bottom: 1.1rem;
+            .rating-static > label:before {
+                line-height: 1.7rem;
+            }
+            .ratilike {
+                margin-top: .2rem;
+                font-size: 1.3rem;
+                font-weight: 400;
+                color: $secondary;
+            }
+        }
+        .desc-block {
+            .title {
+                font-size: 1.5rem;
+                margin-bottom: .8rem;
+                line-height: 2.1rem;
+            }
+            .price-sec {
+                font-size: 1.7rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.4rem;
+                strike {
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    color: $gray-600;
+                    padding: 0 .3rem;
+                    width: 40%;
+                }
+                span {
+                    width: 60%;
+                }
+            }
+        }
+        .feature-box {
+            width: 2.7rem;
+            height: 2.7rem;
+            background-color: $secondary;
+            @include flex-box;
+            position: absolute;
+            left: 0;
+            top: .7rem;
+            transition: .4s all;            
+        }
+        &:hover {
+            .cate-block {
+                .edit-del-btn {
+                    i {
+                        color: $white;
+                    }
+                }
+            }            
+        }
+        .cate-block {
+            
+            font-size: 1.8rem;
+            color: $secondary;
+            width: 59.9%;
+            height: 4rem;
+            clip-path: polygon(0 -750%, 0 850%, 100% 50%);
+            &::after {
+                clip-path: polygon(0 -750%, 0 850%, 100% 50%);
+            }
+            .edit-del-btn {
+                i {
+                    transition: .4s all;
+                }
+                &:hover {                    
+                    i {                        
+                        color: $primary;
+                    }
+                }
+            }
+            .seprater {
+                width: .069rem;
+                height: 2.4rem;
+                background-color: #707007;
+                display: inline-flex;
+                margin: 0 2rem;
+            }
+        }
+        &.service-fil {
+            margin-bottom: 6rem;
+            &:hover {
+                .cate-block {
+                    color: $white;
+                }
+            }
+            .cate-block {
+                font-size: 1.6rem;
+                padding: 0 1.1rem;
+                justify-content: center;
+            }
+            .desc-block {
+                padding: 3.3rem 1.5rem 3.2rem 1.5rem;
+            }
+        }
+    }
+    &.feature-page-card {
+        margin-left: 0;
+        margin-right: 0;
+        .feature-box {
+            width: 3.4rem;
+            height: 3.4rem;
+            background-color: $secondary;
+            @include flex-box;
+            position: absolute;
+            left: 0;
+            top: 1rem;            
+        }
+    }
+    &.offers-card {
+        margin-bottom: 6rem; 
+        margin-left: 0;
+        margin-right: 0;       
+        .desc-block{
+            .price-sec {
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.3rem;
+
+                span {
+                    max-width: 65%;                    
+                }
+                strike {
+                    max-width: 35%;   
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    color: $gray-600;  
+                    padding: 0 .5rem;               
+                }
+            }
+        } 
+    }
+}
+
+// right direction css
+
+.rtl {
+    .services-card {
+        .discount {
+            right: auto;
+            left: 0;
+        }
+        .title-row {
+            direction: rtl;
+        }
+        .cate-block {
+            left: auto;
+            right: 0;
+            clip-path: polygon(100% -550%, 100% 650%, 0 50%);
+            justify-content: flex-end;
+            &::after {
+                clip-path: polygon(100% -550%, 100% 650%, 0 50%);
+                left: auto;
+                right: 0;
+            }
+        }
+        .arrow-btn{
+            svg {
+                transform: scaleX(-1);
+            }
+        }
+    }
+    .services-card.feature-page-card .feature-box {
+        left: auto;
+        right: 0;
+    }
+    .services-card.feature-page-card, .services-card.offers-card {
+        .cate-block {
+            justify-content: flex-start;
+        }
+    }    
+}

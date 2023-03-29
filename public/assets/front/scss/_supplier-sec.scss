@@ -1,0 +1,254 @@
+.primary-headline{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: $secondary;
+    line-height: 4.9rem;
+    text-transform: capitalize;
+    position: relative;
+    display: inline-flex;
+    padding-bottom: .8rem;
+    @include m-450 {
+        font-size: 2.5rem;  
+        line-height: 3.9rem;
+    }
+    @include m-325 {
+        font-size: 1.9rem;
+    }
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        height: 2px;
+        background-color: $primary;
+    }
+    &::before {
+        left: 0;
+        width: 17.37%;
+    }
+    &::after {
+        width: 78.42%;
+        left: 21%;
+    }
+}
+.headline-row {
+    margin-bottom: 5rem;
+}
+.supplier-sec {
+    padding-bottom: 6rem;   
+    @include m-450 {
+        padding-bottom: 2rem;
+    } 
+}
+
+.supplier-card {
+    background-color: $white;
+    box-shadow: 0 1px 10px rgba($black,.16);
+    position: relative;
+    height: 28.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 8.5rem;
+    margin-bottom: 4rem;
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+    transition: .4s all;
+    &:hover {
+        box-shadow: 0 12px 20px rgba($black,.26);
+    }
+    .img-block {
+        max-width: 19.1rem;
+        width: 100%;
+        height: 16.8rem;
+        @include flex-box();
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -8.4rem;
+        overflow: hidden;        
+        filter: drop-shadow(0 3px 6px rgba($black,.16));
+        margin-bottom: 2rem;
+        .supplier-img {
+            clip-path: polygon(26% 0%, 75% 0%, 99% 50%, 75% 100%, 26% 100%, 1% 50%);    
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+            background-color: $white;  
+        }        
+    }
+    .title{
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 2.5rem;
+        margin-bottom: .5rem;
+        color: $secondary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .p-desc {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: $secondary;
+        line-height: 2rem;
+        // margin-bottom: .6rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .stars{
+        margin-bottom: .8rem;        
+        .no {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: $secondary;
+            line-height: 1.7rem;
+            padding: 0 .5rem;
+        }
+    } 
+    .map-link {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 2rem;
+        margin-bottom: 2.4rem;
+        transition: .4s all;
+        color: $secondary;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: 0 1rem;
+        svg {
+            transition: .4s all;
+            margin-right: .6rem;
+            min-width: 1.2rem;
+        }
+        &:hover {
+            color: $primary;
+            svg {
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+
+    }
+    .secondary-btn {
+        margin-bottom: 1rem;
+    }
+    .sup-time {
+        width: 7.5rem;
+        height: 2.5rem;
+        background-color: $primary;
+        border-radius: 1.3rem;
+        @include flex-box;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $secondary;
+        line-height: 2rem;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.supplier-slider, .services-slider, .services-icon-slider-mobile {
+    display: none;
+    &.slick-slider {
+        display: block;
+    }
+    .arrows {
+        top: -7rem;
+        width: 45px;    
+        height: 39px;
+        @include flex-box;
+        opacity: 1;
+        .img-fluid {
+            transition: .4s all;
+        }        
+        &:hover {
+            .img-fluid {
+                filter: brightness(0) invert(1);
+            }
+            &::before {
+                background-image: url(../img/fill-shape.png);  
+            }
+        }
+        &::before {
+            content: "";
+            background-image: url(../img/slider-shape.png);
+            left: 0;
+            top: 0;
+            width: 45px;    
+            height: 39px;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            transition: .4s all;
+        }
+        &.slick-prev {
+            right: 7.5rem;
+            left: auto;
+        }
+        &.slick-next {
+            right: 1.9rem;
+        }
+        // &.arrow-right-main {
+        //     > img {
+        //         @include m-450 {
+        //             padding-top: .5rem;
+        //         }
+        //     }
+        // }
+    }
+}
+
+// right direction css
+
+.rtl {
+    .supplier-card {
+        direction: rtl;
+        .map-link svg {
+            margin-right: 0;
+            margin-left: .6rem;
+        }
+    }
+    .supplier-slider, .services-slider , .services-icon-slider-mobile{
+        .arrows {
+            &.slick-prev{
+                right: auto;
+                left: 7.5rem;
+                .img-fluid {
+                    transform: scaleX(-1);
+                }
+            }
+            &.slick-next {
+                right: auto;
+                left: 1.9rem;
+                .img-fluid {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+    .primary-headline {
+        &::before {
+            right: 0;
+            left: auto;
+        }
+        &::after {
+            right: 21%;            
+            left: auto;
+        }
+    } 
+}
+

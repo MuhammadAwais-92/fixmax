@@ -1,0 +1,38 @@
+.manage-equipment {
+    .manage-equipment-content {
+        .add-project-btn{
+            max-width: 25rem;
+        }
+        .portfolio-add-card {
+            .img-block {
+                height: 13.1rem;
+            }
+            .desc-block {
+                .edit-del-block {
+                    height: 2.9rem;
+                    button {
+                        font-size: 1.2rem;
+                    }
+                    .seprater {
+                        height: 1.7rem;
+                    }
+                }                
+            }
+            .price {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: $secondary;
+                line-height: 2.5rem;
+                margin-top: .6rem;
+            }
+            .title {
+                margin-bottom: .2rem;
+                margin-top: 0;
+                &.service {
+                    margin-bottom: 0;
+                    color: $gray-600;
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,354 @@
+.service-dt-slider-block {
+    .service-big-img {
+        max-width: 100%;
+        height: 29.5rem;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 1rem;
+        @include flex-box;
+        background-color: #f5f5f5;  
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .img-no {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $white;
+            background-color: rgba($secondary,.5);
+            @include flex-box;
+            height: 3rem;
+            min-width: 4.8rem;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            justify-content: space-between;
+            padding: .8rem;
+
+        }   
+        .discount{
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            min-width: 6.5rem;
+            height: 3rem;
+            background-color: $secondary;
+            color: $white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: "san_francisco_semibold";
+            @include flex-box;
+            direction: ltr;
+
+        }   
+    }
+    .silder-sm-block {
+        margin: 0 .5rem;
+        height: 9.1rem;
+        overflow: hidden;
+        @include flex-box;
+        cursor: pointer;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+    .arrows {
+        width: 2.9rem;
+        height: 2.5rem;
+        @include flex-box;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        img {
+            transition: .4s all;
+        }
+        &:hover {
+            &::before {
+                background-image: url(../img/fill-bg-sm.png);
+            }
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+        &::before {
+            content: "";
+            background-image: url(../img/unfill-bg.png);
+            left: 0;
+            top: 0;
+            width: 2.9rem;
+            height: 2.5rem;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;            
+            transition: 0.4s all;
+        } 
+        &.arrow-right-main {
+            right: -1rem;
+        } 
+        &.arrow-left-main {
+            left: -1rem;
+        }       
+    }
+    .slider-for, .slider-nav {
+        display: none;
+        &.slick-slider {
+            display: block;
+        }
+    }
+}
+.service-dt-desc-col {
+    .title-price-row {
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 1.4rem;
+    }
+    .serv-title {
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+        color: $secondary;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+    .serv-price {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $secondary;
+        line-height: 2.8rem;
+    }
+    .secondary-btn {
+        height: 5rem;
+        max-width: 19rem;
+        font-weight: 500;
+    }
+    .right-block {
+        min-height: 9rem;
+        min-width: 19rem;
+    }
+    .visit-price {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $secondary;
+        line-height: 2.5rem;
+        span {
+            font-weight: 300;
+            color: $gray-900;
+            padding: 0 .5rem;
+        }
+    }
+    .star-rating-area {
+        line-height: 1.4rem;
+        .ratilike {
+            margin-top: .3rem;
+        }
+        .rating-static > label {
+            line-height: 1.6rem;
+        }
+        .rating-static > label:before {
+            line-height: 1.6rem;
+        }
+    }
+    .about-supplier-block {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 1.3rem;
+        .title-time-row {
+            margin-bottom: 1.3rem;
+            .title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: $secondary;
+                line-height: 2.8rem;
+
+            }
+            .sup-time {
+                min-width: 7.5rem;
+                height: 3rem;
+                background-color: $primary;
+                border-radius: 1.5rem;
+                color: $secondary;
+                @include flex-box;
+                font-size: 1.4rem;
+                font-weight: 400;
+                line-height: 2rem;
+            }
+        }
+        .supplier-row {
+            .sup-img-block {
+                width: 8.5rem;
+                min-width: 8.5rem;
+                height: 7.5rem;
+                overflow: hidden;
+                background-color: #f5f5f5;
+                @include flex-box;
+                box-shadow: 0 3px 6px rgba($black,.16);                
+            }
+            .sup-desc {
+                .star-rating-area {
+                    margin-bottom: .5rem;
+                }
+                .title {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: $secondary;
+                    line-height: 2.8rem;
+                    margin-bottom: .4rem;
+                }
+                .p-text {
+                    font-size: 1.6rem;
+                    font-weight: 300;
+                    color: $secondary;
+                    line-height: 2.3rem;
+                }
+            }
+        }        
+    }
+    .service-text-desc {
+        .title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $secondary;
+            line-height: 2.8rem;
+            margin-bottom: .7rem;
+        }        
+    }
+}
+
+.chat-btn {
+    svg {
+        width: 3rem;        
+        path {
+            fill: $secondary;
+            transition: .4s ease-in-out;
+            &:hover {
+                fill: $primary;
+            }
+        }
+    }
+}
+
+.select-eq-row > .cols {
+    &:nth-child(even){
+        padding-left: 1rem !important;
+    }
+    &:nth-child(odd){
+        padding-right: 1rem !important;
+    }
+}
+
+// right direction css
+ 
+.rtl {
+    .service-dt-slider-block .service-big-img .discount {
+        left: 1.5rem;
+        right: auto;
+    }
+    .service-dt-slider-block .service-big-img .img-no {
+        right: 1.5rem;
+        left: auto;
+    }
+}
+
+.ui-timepicker-standard {
+    z-index: 99999999999 !important;
+    border: 0 !important;
+    box-shadow: 0 0 6px rgba($black,.16);
+    .ui-widget.ui-widget-content {
+        border: 0;
+    }
+    .ui-menu-item a {
+        font-family: Poppins;
+        font-weight: normal;
+        font-size: 1.6rem;
+        line-height: 1.92rem;
+        color: $secondary;   
+        border: 0 !important;
+        padding: 1.1rem 0;        
+        border-radius: 0;
+        &:hover {
+            background-color: $secondary;
+             color: $white;
+        }     
+    }
+}
+
+.cursor-input {
+    cursor: pointer;
+    &+svg {
+        pointer-events: none;
+    }
+}
+
+.ui-widget.ui-widget-content {
+    font-size: 1.6rem;
+    border: 0 !important;
+    border-radius: 0;
+    background-color: $white;
+    box-shadow: 0 0 6px rgba($black,.16);
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+    cursor: pointer;
+}
+.ui-widget.ui-widget-content .ui-state-default {
+    border-color: $secondary;
+    color: $secondary;
+    text-align: center;
+    background-color: $white;
+    border-radius: 0 !important;
+}
+
+.ui-widget.ui-widget-content .ui-state-default:hover, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background-color: $secondary !important;
+    color: $white !important;
+}
+.ui-state-active, .ui-widget-content .ui-state-active {
+    background-color: $primary !important;
+    color: $white !important;
+    border-color: $primary !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 0.2em 0;
+    border-radius: 0;
+    background: #f5f5f5;
+    border-color: #022c44;
+}
+
+.get-quotation-modal {
+    .custom-radio {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        color: $secondary;
+        margin-bottom: 1rem;
+        a {
+            font-weight: 300;
+            text-decoration: underline;
+            transition: .4s all;
+            color: $secondary;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .upload-sec {
+        .form-control {
+            i {
+                font-size: 2.6rem;
+                color: $secondary;
+                margin-bottom: .3rem;
+                transition: .4s all;
+            } 
+            &:hover {
+                i {
+                    color: $white;
+                }
+            }           
+        }
+    }
+}

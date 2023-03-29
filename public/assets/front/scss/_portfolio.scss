@@ -1,0 +1,149 @@
+.portfolio {
+    .title-btnz-row {
+        margin-bottom: 2.1rem;
+        @include m-450 {
+            justify-content: center !important;
+        }
+        .title {
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: $secondary;
+            line-height: 3.3rem; 
+            @include large-1191 {
+                margin-bottom: 1.5rem;
+            }
+            @include medium-991 {
+                margin-bottom: 0;
+            }
+            @include m-575 {
+                margin-bottom: 1.5rem;
+            }
+
+        }
+                
+    }
+    .text-desc {
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: $gray-600;
+        line-height: 2.8rem;
+        margin-bottom: 2.2rem;
+        @include m-450 {
+            text-align: center;
+        }
+    }
+}
+.portfolio-main-content {
+    .add-project-btn {
+        max-width: 17.5rem !important;
+    }
+}
+.add-project-btn {
+    height: 5rem;
+    svg {
+        margin-right: 1.5rem;
+        transition: .4s all;
+        path {
+            fill:$white;
+        }
+    }
+}
+
+.ctm-btnz-block {
+    max-width: 36rem;
+    width: 100%;
+    .secondary-btn {
+        font-weight: 500;
+        height: 5rem;
+        &.border-btn {
+            border-width: 2px;
+        }                
+    }
+    &.renew-btnz {
+        .secondary-btn {
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+    }
+    &.mw-20 {
+        max-width: 20rem;
+    }
+}
+
+.portfolio-card {
+    max-width: 262px;
+    width: 100%;
+    height: 222px;
+    overflow: hidden;
+    @include flex-box;
+    box-shadow: 0 0 3px rgba($black,.16);
+    margin-bottom: 3rem;
+    @include m-450 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.portfolio-add-card {
+    margin-bottom: 3rem;
+    .img-add-del-btn {
+        box-shadow: 0 0 3px rgba($black,.16);
+    }
+    .img-block {
+        height: 18.1rem;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .desc-block {
+        .edit-del-block {
+            height: 4.1rem;
+            width: 100%;
+            background-color: $primary;            
+            button {
+                font-size: 2rem;
+                color: $secondary;
+                transition: .4s all;
+                &:hover{
+                    color: $white;
+                }
+            }
+            .seprater {
+                margin: 0 2rem;
+                height: 2.8rem;
+                width: .05rem;
+                background-color: $secondary;
+            }
+        }
+    }
+    .title {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        margin-top: 1rem;
+        font-weight: 400;
+        color: $secondary;
+    }
+}
+
+.port-dt-row {
+              
+    .portfolio-card{        
+            margin-bottom: 3rem !important;        
+    }               
+}
+
+// right direction css
+
+.rtl {
+     .add-project-btn svg {
+        margin-right: 0;
+        margin-left: 1.5rem;
+    }
+}

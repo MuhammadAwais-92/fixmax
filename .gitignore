@@ -1,0 +1,15 @@
+/vendor
+/vendorll
+.idea
+/storage/logs
+/node_modules
+/public/images/cache
+/config/settings.php
+.history
+.env
+.history
+/db/fix_max-old.sql
+/vendor-old
+/vendor.zip
+/db/fix_max.sql
+/db

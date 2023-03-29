@@ -1,0 +1,189 @@
+.spacing-y {
+    padding-top: 10rem;
+    padding-bottom: 23.7rem;
+    @include  large-1191 {
+        padding-top: 8rem;
+        padding-bottom: 18rem;
+    }
+    @include medium-991 {
+        padding-top: 6rem;
+        padding-bottom: 16rem;
+    }
+    @include m-450 {
+        padding-top: 4rem;
+        padding-bottom: 12rem;
+    }
+}
+.change-password-box {
+    max-width: 40.8rem;
+    @include small-767 {
+        max-width: 100%;
+    }
+    .secondary-btn {
+        height: 5rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+}
+
+.mt-05 {
+    margin-top: .5rem;
+}
+
+.pr-05 {
+    padding-right: .5rem;    
+}
+
+.pl-05 {
+    padding-left: .5rem;    
+}
+
+.mb-54 {
+    margin-bottom: 5.4rem;
+}
+
+.gap-1x {
+    gap: 0 1rem;
+}
+
+.gap-3x {
+    gap: 0 3rem; 
+}
+.gap-2x {
+    gap: 0 2rem;  
+}
+.gap-15 {
+    gap: 0 1.5rem; 
+}
+.gap-1x-mbl {
+    @include m-325 {
+        gap: 0 1rem !important;
+    }
+}
+.gap-05 {
+    gap: 0 .5rem;
+}
+.h-45 { 
+    height: 4.5rem !important;
+}
+
+.rtl {
+    .pr-05 {
+        padding-right: 0;
+        padding-left: .5rem;    
+    }
+    
+    .pl-05 {
+        padding-left: 0; 
+        padding-right: .5rem;   
+    }
+
+    .mr-05 {
+        margin-right: 0;
+        margin-left: .5rem;
+    }
+    .ml-05 {
+        margin-left: 0;
+        margin-right: .5rem;
+    }
+}
+
+.col-6-ctm {
+    @include m-575 {
+        max-width: 50%;        
+    }
+    @include m-450 {
+        max-width: 100%;
+    }
+}
+.mx-05 {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.mb-05 {
+    margin-bottom: .5rem;
+}
+.mw-55 {
+    max-width: 55% !important;
+}
+.mw-50 {
+    max-width: 50% !important;
+}
+
+.mw-lg-100 {
+    @include large-1191 {
+        max-width: 100% !important;
+    }
+}
+.mx-25 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+.mr-05 {
+    margin-right: .5rem;
+}
+.ml-05 {
+    margin-left: .5rem;
+}
+.mb-45 {
+    margin-bottom: 4.5rem;
+}
+
+.primary-text-p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $gray-600;
+    line-height: 2.5rem;
+}
+.mb-25 {
+    margin-bottom: 2.5rem !important;
+}
+
+.mb-14 {
+    margin-bottom: 1.4rem !important;
+}
+
+@keyframes myMove {
+    0% {
+      bottom: -2.25rem;
+    }
+
+    50% {
+        bottom: -3.25rem;
+    }
+
+    70%{
+        bottom: -5.25rem;
+    }
+  
+    100% {
+      bottom: -2.25rem;
+    }
+  }
+
+  @keyframes lineDraw {
+
+      from {
+		stroke-dashoffset: 2200;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+  }
+
+  @keyframes fadLeft {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      
+  }

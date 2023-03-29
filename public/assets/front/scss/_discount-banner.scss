@@ -1,0 +1,68 @@
+.discount-banner {
+    height: 56.8rem;
+    background-image: url(../img/discount-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex-box();
+    flex-direction: column;
+    .avail-title {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        color: $white;
+        position: relative;
+        padding: 0 1.5rem;
+        text-transform: uppercase;
+        display: inline-flex;
+        letter-spacing: .05rem;
+        &::before,&::after {
+            content: "";
+            height: .5rem;
+            width: 84.65%;
+            background-color: $primary;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-flex;
+            @include m-575 {
+                width: 60.65%;
+            }
+            @include m-450 {
+                width: 20%;
+            }
+        }
+        &::before {
+            right: 100%;
+        }
+        
+        &::after {
+            left: 100%;
+        }
+    }
+    .discount {
+        font-size: 10rem;
+        line-height: 14rem;
+        color: $white;
+        font-weight: 300;
+        @include m-450 {
+            font-size: 7rem;
+            line-height: 9rem;
+        }
+        strong {
+            font-weight: bold;
+        }
+    }
+    .title-sm {
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: $white;
+        line-height: 3.5rem;
+        margin-bottom: 4.9rem;
+        text-transform: uppercase;
+        letter-spacing: .05rem;
+    }
+    .primary-btn {
+        max-width: 23.461rem;
+        font-size: 2rem;
+    }
+}

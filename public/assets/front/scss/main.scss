@@ -1,0 +1,334 @@
+
+@mixin flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin  img-wh-100 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin ctm-scroll-bar {
+  /* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #DCDCDC; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  width: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary; 
+}
+}
+@mixin chat-scroll-bar {
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $text-e; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary; 
+  width: 7px;
+}
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: rgba($secondary,.5); 
+// }
+}
+
+
+$body-bg: #fff;
+$primary: #FFE52C;
+$secondary: #022C44;
+$secondary-1: #003149;
+$white: #fff;
+$text-6:#666;
+$text-c:#ccc;
+
+.primary {
+  color: $primary;
+}
+.secondary {
+  color: $secondary;
+}
+.color-primary{
+  color: $primary;
+}
+
+.bg-white {
+  background: #fff !important;
+}
+.text-6{
+  color: #666 !important;
+}
+.heading{
+  color: #000 !important;
+}
+
+.bg-gray {
+  background: #f5f5f5 !important;
+}
+.bg-primary {
+  background: $primary;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+.clearfix {
+  clear: both;
+}
+
+
+$bg-gray: #f5f5f5;
+$gray-100: #f7f7f7;
+$gray-200: #343434;
+$gray-300: #373737;
+$gray-400: #0b0b0b;
+$gray-600: #666666;
+$gray-800: #888888;
+$gray-900: #999;
+$dark: $gray-200;
+$border-color: #707070;
+$white-bg: #fff;
+$text-2 : #222;
+$text-3: #333;
+$text-e: #eee;
+
+
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  // user-drag: none;
+  min-height: 100; 
+}
+
+.ltr {
+  direction: ltr !important;
+  text-align: left;
+}
+.bg-none{
+  background-image: none !important;
+}
+
+
+@import "ctm-rtl";
+@import "fonts";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "responsive";
+@import "classes";
+@import "button";
+@import "header";
+@import "home-silder";
+@import "footer";
+@import "rtlb";
+@import "breadcrumb";
+@import "input";
+@import "image-upload";
+@import "services-icons-sec";
+@import "discount-banner";
+@import "supplier-sec";
+@import "our-services";
+@import "how-works";
+@import "about-us-sec";
+@import "call-to-action";
+@import "rating";
+@import "auth";
+@import "ctm-dropdown";
+@import "notification-dropdown";
+@import "404";
+@import "left-sidebar";
+@import "myutility";
+@import "notification-page";
+@import "payment-profile";
+@import "rating-reviews";
+@import "subscription-packages";
+@import "chat";
+@import "select-services";
+@import "feature-services";
+@import "pagination";
+@import "packages-modal";
+@import "portfolio";
+@import "orders";
+@import "order-details";
+@import "manage-equipment";
+@import "rtlb";
+@import "supplier-profile";
+@import "supplier-edit-profile";
+@import "saved-addresses";
+@import "pages";
+@import "checkout";
+@import "suppliers-page";
+@import "supplier-details";
+@import "service-details";
+@import "articles";
+@import "image-gallery";
+@import "faqs";
+@import "contact-us"; 
+@import "master-page";
+@import "service-filter"; 
+
+ 
+   
+
+
+
+/*****=========== Mytechnology  SCSS Custom  ================**********/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+button{
+  &:focus {
+    outline: 0;
+  }
+}
+
+.px-16 {
+  padding-left: 1.6rem !important;
+  margin-right: 1.6rem !important;
+}
+
+.mr-16 {
+  margin-right: 1.6rem !important;
+}
+
+.rtl {
+  .mr-16 {
+    margin-right: 0 !important;
+    margin-left: 1.6rem !important;
+  }
+}
+
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+
+  @include medium-991 {
+      font-size: 9px;
+  }
+
+  font-family: 'Poppins', sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  font-family: 'Poppins', sans-serif !important;
+  overflow-x: hidden; 
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1170px;
+  }
+
+  .container-fluid {
+      max-width: 1730px;
+  }
+}
+
+// @media (min-width: 1600px) {
+
+  .container-max {
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+  }
+// }
+
+@media (min-width:576px) and (max-width:991px) {
+  .main-footer .container-max {
+    padding: 0 5rem; 
+}
+}
+
+// @media (max-width:1440px){
+//     .container-max {
+//       width: 90%;
+//       margin: 0 auto;
+//   }
+// }
+
+
+
+
+.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+
+.m-extra {
+  @include medium-991 {
+      margin-bottom: 19rem !important;
+  }
+}
+
+.mid-space {
+  @include m-575 {
+      margin-bottom: 3rem;
+  }
+}
+
+.mw-100 {
+  max-width: 100% !important;
+}
+
+.mw-auto {
+  width: auto !important;
+}
