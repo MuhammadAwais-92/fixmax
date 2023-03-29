@@ -27,21 +27,9 @@ class CartController extends Controller
 
     public function save(CartRequest $request)
     {
-        try {
-            $service = $this->serviceRepository->get($request->service_id);
-            if(!$service)
-            {
-                return redirect()->route('front.services')->with('err', __('Service has been deleted'));
-            }
-            $cart = $this->cartRepository->save($request);
-            if ($cart) {
-                return redirect()->route('front.cart.checkout', ['service_id' => $cart->service_id]);
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->with('err', $e->getMessage())->withInput();
-        }
-    }
-   
 
-   
+    }
+
+
+
 }

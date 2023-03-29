@@ -18,12 +18,6 @@ class NotificationController extends Controller
     }
 
     public function index(){
-        $page = request('page', 1);
-        $this->breadcrumbTitle = __('Notifications');
-        $this->breadcrumbs['javascript: {};'] = ['title' => __('Notifications')];
-        $this->notificationRepository->setPaginate(20);
-
-        $notifications = $this->notificationRepository->list();
-        return view('front.dashboard.notifications.notification', ['notifications' => $notifications, 'page' => $page]);
+     
     }
 }

@@ -8,7 +8,7 @@ use App\Http\Dtos\UserRegisterDto;
 use App\Http\Repositories\CityRepository;
 use App\Http\Repositories\UserRepository;
 use App\Http\Controllers\Controller;
-use App\Http\Repositories\WithDrawRepository;
+
 use App\Http\Requests\UserRequest;
 use App\Models\UserArea;
 use App\Models\Withdraw;
@@ -20,12 +20,12 @@ class ProfileController extends Controller
 {
     protected object $userRepository, $cityRepository,$withDrawRepository;
 
-    public function __construct(UserRepository $userRepository, CityRepository $cityRepository, WithDrawRepository $withDrawRepository)
+    public function __construct(UserRepository $userRepository, CityRepository $cityRepository)
     {
         parent::__construct();
         $this->userRepository = $userRepository;
         $this->cityRepository = $cityRepository;
-        $this->withDrawRepository = $withDrawRepository;
+        $this->withDrawRepository = $userRepository;
         $this->userRepository->setFromWeb(true);
         $this->cityRepository->setFromWeb(true);
         $this->withDrawRepository->setFromWeb(true);

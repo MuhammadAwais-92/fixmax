@@ -118,9 +118,9 @@ Route::namespace('Front')->as('front.')->group(function () {
         route::post('/services/save/{id}', [ServicesController::class, 'save'])->name('service.save');
         route::get('/service-edit/{id}', [ServicesController::class, 'edit'])->name('service.edit');
         route::get('/service-delete/{id}', [ServicesController::class, 'delete'])->name('service.delete');
-      
+
         //Fetured Services list
-        route::get('featured/services/all', [ServicesController::class, 'featuredServices'])->name('services.featured.index');
+        route::get('featured/services/all', [ServicEquipmentsControlleresController::class, 'featuredServices'])->name('services.featured.index');
         //Manage Equipment
         route::get('/equipments/all', [EquipmentsController::class, 'index'])->name('equipments.index');
         route::get('/equipments/create', [EquipmentsController::class, 'create'])->name('equipment.create');
@@ -176,12 +176,12 @@ Route::namespace('Front')->as('front.')->group(function () {
            route::get('conversations/{service_id}/{supplier_id}', [ChatController::class, 'createOrGet'])->name('conversation.start');
            route::get('conversation/{id}', [ChatController::class, 'conversation'])->name('conversation.messages');
            route::get('conversation/{id}/delete', [ChatController::class, 'conversationDelete'])->name('conversation.delete');
-        //    payment profile 
+        //    payment profile
         route::get('payment',[ProfileController::class, 'payment'])->name('payment');
         route::get('/payment/detail', [ProfileController::class, 'payment'])->name('payment.detail');
         route::post('/payment/update', [ProfileController::class, 'paymentUpdate'])->name('payment.update');
         route::post('/withdraw/payment', [ProfileController::class, 'withdraw'])->name('withdraw.payment');
-     
+
 
     });
 
